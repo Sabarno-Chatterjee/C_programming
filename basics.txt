@@ -20,3 +20,30 @@ Syntax:
 \t (Horizontal tab) – We use it to shift the cursor to a couple of spaces to the right in the same line.
 
 \n is an escape sequence that denotes a newline character.
+
+
+* VARIABLES
+
+Creating a variable takes two steps:
+
+(a) Declaration :
+
+type variableName = value; Where type is one of C types (such as int ), and variableName is the name of the variable (such as x or myName). The equal sign is used to assign a value to the variable.
+
+eg: 
+
+int year;
+
+(b) Initialisation: 
+
+
+Variables are explicitly initialized if they are assigned a value in the declaration statement.
+
+
+eg:
+
+year = 2023
+
+or it can be merged into one step;
+
+int year = 2023;
