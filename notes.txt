@@ -1,0 +1,79 @@
+Introduction to C programming language:
+
+C is a general-purpose, high-level programming language.
+It was developed by Dennis Ritchie at Bell Labs in the early 1970s.
+C is a procedural language, which means it follows a step-by-step approach to solve a problem.
+It is a structured language, which means it supports the use of functions, which can be called from other parts of the program.
+
+
+Input and output in C:
+
+The "stdio.h" header file is used for standard input and output in C.
+The "int main()" function is the entry point of a C program, and it indicates that the function should return an integer value.
+The "return 0;" statement is used to indicate the successful completion of the program.
+The "\t" escape sequence is used to shift the cursor to a couple of spaces to the right in the same line.
+The "\n" escape sequence denotes a newline character.
+
+
+Variables in C:
+
+Creating a variable takes two steps: declaration and initialization.
+The declaration of a variable includes the type and name of the variable.
+Initialization is the process of assigning a value to the variable.
+Variables can be explicitly initialized if they are assigned a value in the declaration statement.
+
+
+Data types in C:
+
+C has several built-in data types, including int, float, char, double, short, long, and bool.
+Common format specifiers include %d, %f, %c, %s, %p, and %lf.
+Single quotes are used to denote a single character literal, while double quotes create a string literal.
+The "double" data type is used to represent floating-point numbers with double precision, providing higher precision than the "float" data type.
+The "unsigned" keyword is used to declare a variable that can only store positive values or zero.
+"short int", "int", and "long int" are integer data types used to store whole numbers, with varying ranges of values and memory usage.
+"int" is the most commonly used integer data type and is appropriate for most situations, while "long int" should be used when the value being stored is outside the range of "int".
+
+
+# CONST
+
+In C, the keyword "const" is used to declare a variable whose value cannot be modified once it has been assigned. This means that if you declare a variable as const, you can be sure that its value will remain constant throughout the execution of the program.
+
+Here are some points to keep in mind when working with const in C:
+
+1. Declaration: To declare a variable as const, use the const keyword before the data type in the variable declaration. For example:
+
+   const int x = 10;
+
+2. Initialization: A const variable must be initialized when it is declared, as its value cannot be changed later. For example:
+
+   const int x = 10;
+
+3. Scoping: A const variable can be declared at the global scope, at the function scope, or at the block scope. Its scope is the same as that of a non-const variable of the same data type.
+
+4. Use with pointers: When used with pointers, const can be used to declare a pointer to a constant value, or a constant pointer to a value. For example:
+
+   const int* ptr1; // Pointer to a constant integer
+   int* const ptr2; // Constant pointer to an integer
+
+5. Advantages: Using const can help prevent programming errors and make the code more readable and maintainable. It can also help the compiler to optimize the code.
+
+6. Limitations: Const variables cannot be modified, so they cannot be used for variables whose values need to be changed during the execution of the program. Additionally, const variables may consume more memory than non-const variables, as the compiler may create a separate copy of the value in memory.
+
+
+# USER INPUTS:
+
+
+    -- Use scanf() function to read the user input. Syntax: scanf(format_specifier, &variable).
+    -- Format specifier specifies the type of input. For integer, use %d, for character use %c, for float use %f, etc.
+    -- The & operator is used before the variable name to store the input value at the memory location of the variable.
+
+
+
+# scanf vs fgets:
+
+fgets() and scanf() are both C library functions used to take input from the user in C programs, but there are some differences between them:
+
+fgets() reads a string from the input stream, whereas scanf() reads formatted input (such as integers or floating-point numbers) from the input stream.
+fgets() reads a fixed number of characters (up to the specified limit) and stops reading when it reaches a newline character ('\n') or the end-of-file marker, whereas scanf() stops reading when it encounters a whitespace character (such as a space or a newline).
+fgets() is generally considered safer than scanf() because it doesn't leave any characters in the input stream, whereas scanf() can leave newline characters or other unwanted characters in the input stream, which can cause problems with subsequent input operations.
+In general, if you need to read a string of text input from the user, use fgets(). If you need to read formatted input (such as integers or floating-point numbers), use scanf().

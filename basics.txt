@@ -47,3 +47,50 @@ year = 2023
 or it can be merged into one step;
 
 int year = 2023;
+
+
+* Common format specifiers:
+
+%d - used for integers (int, short, long).
+%f - used for floating-point numbers (float, double).
+%c - used for a single character (char).
+%s - used for strings of characters (char array).
+%p - used for pointers.
+%lf - used for double.
+
+
+* In C, single quotes to denote a single character literal. If double quotes were used instead, it would create a string literal, which is an array of characters.
+
+* "Double" is a data type in C that is used to represent floating-point numbers with double precision. It is used when higher precision is required than that provided by the "float" data type. It uses more memory, 8 bytes(64 bits of precision) instead of 4 bytes(32 bits of precision). 
+
+* For using Boolean we need to include the "<stdbool.h>" library. 
+
+# Unsigned:
+
+- The unsigned keyword is used to declare a variable that can only store positive values or zero.
+- It is used with integer data types (int, short, long) to indicate that the variable can only store non-negative values.
+- When a variable is declared as unsigned, the sign bit, which represents the sign of the number, is not used to store the value of the variable.
+- Instead, the bit that would have been used to store the sign is used to store the magnitude of the number.
+- This allows unsigned variables to store larger positive values than their signed counterparts, but they cannot store negative numbers.
+- For example, an unsigned int can store values between 0 and 4,294,967,295, while a signed int can store values between -2,147,483,648 and 2,147,483,647.
+
+In summary, the unsigned keyword is a way to declare variables that can only store non-negative values. It is useful when you know that a variable will never need to store negative values, and allows you to store larger positive values than with a signed variable.
+
+
+# In C, "short int", "int", and "long int" are all integer data types that are used to store whole numbers. Here are some differences between them:
+
+Range of values:
+"short int" can store values between -32,768 and 32,767.
+"int" can store values between -32,768 and 32,767 (same as short int on most systems), or between -2,147,483,648 and 2,147,483,647 (same as long int on some systems).
+"long int" can store values between -2,147,483,648 and 2,147,483,647.
+Memory usage:
+"short int" typically uses 2 bytes (16 bits) of memory.
+"int" typically uses 2 or 4 bytes (16 or 32 bits) of memory, depending on the system.
+"long int" typically uses 4 bytes (32 bits) of memory.
+Performance:
+On most systems, "int" is the most efficient data type to use, as it is the "natural" size of the machine's processor.
+Using "short int" or "long int" may result in slower code, as the processor may need to perform extra operations to convert between the data type and the processor's "natural" size.
+When to use each data type:
+"short int" can be used when memory usage is a concern, and when the value being stored is within its range.
+"int" is the most commonly used integer data type, and is appropriate for most situations.
+"long int" should be used when the value being stored is outside the range of "int".
