@@ -94,3 +94,52 @@ When to use each data type:
 "short int" can be used when memory usage is a concern, and when the value being stored is within its range.
 "int" is the most commonly used integer data type, and is appropriate for most situations.
 "long int" should be used when the value being stored is outside the range of "int".
+
+
+# Switch case statements:
+
+
+Eg:
+
+int main() {
+    int number;
+    printf("Enter a number (1-5): ");
+    scanf("%d", &number);
+    switch(number) {
+        case 1:
+            printf("I");
+            break;
+        case 2:
+            printf("II");
+            break;
+        case 3:
+            printf("III");
+            break;
+        case 4:
+            printf("IV");
+            break;
+        case 5:
+            printf("V");
+            break;
+        default:
+            printf("Invalid number");
+            break;
+    }
+    printf("\n");
+    return 0;
+}
+
+
+The switch statement and the if-else statement are both used to make decisions in C, but they are used in different situations.
+
+The switch statement is usually used when you have multiple conditions that depend on a single variable. The switch statement evaluates the value of the variable and executes the corresponding case statement. It's a cleaner and more concise way of writing code for multiple conditions.
+
+On the other hand, the if-else statement is used when you have a single condition that needs to be evaluated. It can also be used for nested conditions when you have multiple conditions that depend on one another.
+
+
+# <ctype.h>
+
+
+ctype.h is a header file in C programming language that provides functions to determine the type of character that is being used. The functions in ctype.h are used to test whether a given character is a digit, letter, punctuation, whitespace, or other printable or non-printable character.
+
+toupper is a function in ctype.h that is used to convert lowercase alphabetic characters to uppercase in C programming language. The function takes a character as an argument and returns the uppercase equivalent of that character if it is a lowercase alphabetic character. If the argument is not a lowercase alphabetic character, the function returns the argument without any changes.
