@@ -143,3 +143,7 @@ On the other hand, the if-else statement is used when you have a single conditio
 ctype.h is a header file in C programming language that provides functions to determine the type of character that is being used. The functions in ctype.h are used to test whether a given character is a digit, letter, punctuation, whitespace, or other printable or non-printable character.
 
 toupper is a function in ctype.h that is used to convert lowercase alphabetic characters to uppercase in C programming language. The function takes a character as an argument and returns the uppercase equivalent of that character if it is a lowercase alphabetic character. If the argument is not a lowercase alphabetic character, the function returns the argument without any changes.
+
+
+* Arguments are what you are sending to a function.
+* Parameters are what a function expects when it is invoked.

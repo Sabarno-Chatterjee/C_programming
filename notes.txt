@@ -77,3 +77,16 @@ fgets() reads a string from the input stream, whereas scanf() reads formatted in
 fgets() reads a fixed number of characters (up to the specified limit) and stops reading when it reaches a newline character ('\n') or the end-of-file marker, whereas scanf() stops reading when it encounters a whitespace character (such as a space or a newline).
 fgets() is generally considered safer than scanf() because it doesn't leave any characters in the input stream, whereas scanf() can leave newline characters or other unwanted characters in the input stream, which can cause problems with subsequent input operations.
 In general, if you need to read a string of text input from the user, use fgets(). If you need to read formatted input (such as integers or floating-point numbers), use scanf().
+
+
+Function prototype in C programming is used to declare the function signature before the function is defined. It provides information about the function's return type, function name, and parameter list. Some of the reasons for using function prototype in C programming are:
+
+1. Catching Errors: A function prototype catches errors at compile-time if there is a mismatch between the actual function call and the prototype declaration.
+
+2. Type Checking: The compiler checks the prototype declaration for the correct types of arguments passed to the function.
+
+3. Code Optimization: When the function prototype is declared, the compiler knows the return type and arguments of the function. This information can be used to optimize the code during compilation.
+
+4. Improved Readability: Function prototype provides a clear and concise definition of the function, making it easier for others to read and understand the code.
+
+5. Modular Programming: Function prototype makes modular programming easier by allowing functions to be declared in a header file and used in different source files.
