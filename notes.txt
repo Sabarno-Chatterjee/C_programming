@@ -90,3 +90,12 @@ Function prototype in C programming is used to declare the function signature be
 4. Improved Readability: Function prototype provides a clear and concise definition of the function, making it easier for others to read and understand the code.
 
 5. Modular Programming: Function prototype makes modular programming easier by allowing functions to be declared in a header file and used in different source files.
+
+
+
+
+# Ternary operator:
+
+condition ? expression1 : expression2;
+
+

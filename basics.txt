@@ -147,3 +147,49 @@ toupper is a function in ctype.h that is used to convert lowercase alphabetic ch
 
 * Arguments are what you are sending to a function.
 * Parameters are what a function expects when it is invoked.
+
+
+
+# Difference between while loop and do while loop:
+
+
+
+In C programming, both while loop and do-while loop are used for repetitive execution of a block of code based on a condition. However, there are some key differences between the two:
+
+1. Condition check: In a while loop, the condition is checked at the beginning of each iteration. If the condition is false, the loop will not execute at all. In contrast, a do-while loop checks the condition at the end of each iteration, which means that the loop will always execute at least once.
+
+2. Syntax: The syntax for a while loop is: 
+
+```
+while (condition) {
+    // code to be executed
+}
+```
+
+The syntax for a do-while loop is:
+
+```
+do {
+    // code to be executed
+} while (condition);
+```
+
+3. Usage: While loops are commonly used when the number of iterations is not known in advance, and the loop should only execute if the condition is true. On the other hand, do-while loops are used when the loop should execute at least once, regardless of the condition.
+
+4. Control Flow: In while loop, the control flow enters the loop body only if the test expression is true. In contrast, in a do-while loop, the control flow always enters the loop body at least once, even if the test expression is false.
+
+Here's an example to illustrate the difference:
+
+```
+int i = 10;
+
+while (i < 5) {
+    printf("This code will not execute\n");
+}
+
+do {
+    printf("This code will execute at least once\n");
+} while (i < 5);
+```
+
+In the example above, the while loop will not execute at all because the condition is false. However, the do-while loop will execute at least once, regardless of the condition.
