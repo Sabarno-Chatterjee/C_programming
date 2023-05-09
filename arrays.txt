@@ -1,0 +1,75 @@
+
+
+In C programming, an array is a collection of data items of the same type, stored in contiguous memory locations. The elements in an array can be accessed by their index, which is a numeric value that represents the position of the element within the array.
+
+The syntax for declaring an array in C is as follows:
+
+```
+type array_name[array_size];
+```
+
+Here, `type` is the data type of the elements in the array, such as `int`, `char`, or `float`. `array_name` is a user-defined name for the array, and `array_size` is the number of elements in the array.
+
+For example, if we wanted to declare an array of 10 integers, we could do it like this:
+
+```
+int my_array[10];
+```
+
+To access a specific element in an array, we use the following syntax:
+
+```
+array_name[index]
+```
+
+Here, `index` is the position of the element we want to access, starting from 0 for the first element.
+
+For example, to assign the value 5 to the third element of `my_array`, we could do it like this:
+
+```
+my_array[2] = 5;
+```
+
+We can also initialize an array with a list of values at the time of declaration, like this:
+
+```
+int my_array[] = {1, 2, 3, 4, 5};
+```
+
+In this case, the size of the array is automatically determined by the number of elements in the initializer list.
+
+Arrays can be used in various ways in C programming, such as for storing and manipulating data, implementing data structures like stacks and queues, and more.
+
+
+# sizeof(expression):
+
+
+In C programming, sizeof is an operator that returns the size of a data type or variable in bytes.
+
+Eg:
+
+int my_array[] = {1, 2, 3, 4, 5};
+size_t array_size = sizeof(my_array);
+
+
+# Array of strings:
+
+Eg:
+
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+    char cars[][10] = {"Mustang", "Ferrari", "Bentley", "Jaguar"};
+
+    int rows = sizeof(cars) / sizeof(cars[0]);
+
+    for (int i = 0; i < rows; i++)
+    {
+        printf("%s ", cars[i]);
+    }
+
+    printf("\n");
+    return 0;
+}

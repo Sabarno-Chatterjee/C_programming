@@ -1,0 +1,76 @@
+A two-dimensional (2D) array in C is a collection of elements of the same data type arranged in a rectangular grid of rows and columns. Each element in a 2D array can be accessed using two indices, the first indicating the row and the second indicating the column.
+
+To declare a 2D array in C, you specify the data type of the elements and the number of rows and columns in the array, like this:
+
+```
+int arr[ROWS][COLS];
+```
+
+Here, `ROWS` and `COLS` are constants or variables that specify the number of rows and columns in the array, respectively. For example, you could declare a 2D array of integers with 3 rows and 4 columns like this:
+
+```
+int arr[3][4];
+```
+
+You can also initialize the elements of a 2D array when you declare it, like this:
+
+```
+int arr[2][3] = {{1, 2, 3}, {4, 5, 6}};
+```
+
+Here, the elements of the 2D array are initialized with the values 1, 2, 3, 4, 5, and 6, arranged in two rows and three columns.
+
+To access an element of a 2D array, you use the indices for the row and column of the element you want. For example, to access the element in the second row and third column of a 2D array named `arr`, you would use the expression `arr[1][2]`, since C arrays are zero-indexed.
+
+You can also use loops to iterate over the elements of a 2D array. For example, to print all the elements of a 2D array named `arr`, you could use a nested for loop like this:
+
+```
+for (int i = 0; i < ROWS; i++) {
+    for (int j = 0; j < COLS; j++) {
+        printf("%d ", arr[i][j]);
+    }
+    printf("\n");
+}
+```
+
+Here, the outer loop iterates over the rows of the array, and the inner loop iterates over the columns of each row. The `printf` statement prints each element of the array, separated by spaces, and the `printf("\n")` statement prints a newline character at the end of each row.
+
+Eg:
+
+#include <stdio.h>
+
+int main()
+{
+int numbers[3][3] = {
+{1, 2, 3},
+{4, 5, 6},
+{7, 8, 9}};
+
+    // int numbers[3][3];
+
+    // numbers[0][0] = 11;
+    // numbers[0][1] = 12;
+    // numbers[0][2] = 13;
+    // numbers[1][0] = 14;
+    // numbers[1][1] = 15;
+    // numbers[1][2] = 16;
+    // numbers[2][0] = 17;
+    // numbers[2][1] = 18;
+    // numbers[2][2] = 19;
+
+    int rows = sizeof(numbers) / sizeof(numbers[0]);
+    int columns = sizeof(numbers[0]) / sizeof(numbers[0][0]);
+
+    for (int i = 0; i < rows; i++)
+    {
+        for (int j = 0; j < columns; j++)
+        {
+            printf("%d ", numbers[i][j]);
+        }
+        printf("\n");
+    }
+
+    printf("\n");
+    return 0;
+
+}

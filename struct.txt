@@ -1,0 +1,58 @@
+In C programming, a struct (short for structure) is a composite data type that allows you to group variables of different data types under a single name. It is similar to a record in other programming languages.
+
+To declare a struct, you must specify its name, followed by a set of braces containing the member variables. For example, the following code declares a struct called "Person" with three member variables: name, age, and address.
+
+```
+struct Person {
+  char name[50];
+  int age;
+  char address[100];
+};
+```
+
+You can then declare variables of the struct type and assign values to their member variables like this:
+
+```
+struct Person person1;
+strcpy(person1.name, "John Smith");
+person1.age = 30;
+strcpy(person1.address, "123 Main St");
+
+struct Person person2 = {"Jane Doe", 25, "456 Elm St"};
+```
+
+You can also access individual members of a struct using the dot (.) operator. For example, to print out the name of person1, you can use the following code:
+
+```
+printf("Name: %s\n", person1.name);
+```
+
+Structs are often used in C programming to group related data together in a meaningful way, and they can be useful for creating complex data structures.
+
+
+Eg:
+
+#include <stdio.h>
+#include <string.h>
+
+struct Player
+{
+    char name[10];
+    int score;
+};
+
+int main()
+{
+
+    struct Player player1;
+    struct Player player2;
+
+    strcpy(player1.name, "Sunny");
+    player1.score = 10;
+    strcpy(player2.name, "Ben");
+    player2.score = 6;
+    printf("%s : %d\n", player1.name, player1.score);
+    printf("%s : %d", player2.name, player2.score);
+    printf("\n");
+    return 0;
+}
