@@ -56,3 +56,36 @@ int main()
     printf("\n");
     return 0;
 }
+
+
+
+# Array of struct:
+
+
+Example:
+
+#include <stdio.h>
+#include <string.h>
+
+struct Student
+{
+    char name[10];
+    float gpa;
+};
+
+int main()
+{
+    struct Student student1 = {"Hermione", 4.0};
+    struct Student student2 = {"Harry", 3.5};
+    struct Student student3 = {"Luna", 3.9};
+    struct Student student4 = {"Ron", 3.2};
+
+    struct Student students[] = {student1, student2, student3, student4};
+    for (int i = 0; i < sizeof(students) / sizeof(students[0]); i++)
+    {
+        printf("%s : %.2f\n", students[i].name, students[i].gpa);
+    }
+
+    printf("\n");
+    return 0;
+}

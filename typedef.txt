@@ -1,0 +1,68 @@
+In C programming, `typedef` is a keyword used to create an alias or a new name for an existing data type. It can be used to make a type definition easier to read and understand, or to provide a more descriptive name for a data type.
+
+To use `typedef`, you need to specify the original data type and the new name you want to give it. Here is the general syntax:
+
+```
+typedef <original_data_type> <new_data_type>;
+```
+
+For example, let's say we have a structure type defined as follows:
+
+```
+struct Person {
+  char name[50];
+  int age;
+};
+```
+
+We can create a new data type called `PersonType` by using `typedef` as follows:
+
+```
+typedef struct Person PersonType;
+```
+
+This allows us to use `PersonType` as a data type in place of `struct Person`. For example, we can declare a variable of type `PersonType` like this:
+
+```
+PersonType person1 = {"John Smith", 30};
+```
+
+`typedef` can also be used to create new names for other data types, such as primitive data types, pointers, and arrays. For example:
+
+```
+typedef int myInt;
+typedef float* FloatPointer;
+typedef char myString[50];
+```
+
+In these examples, `myInt` is a new name for `int`, `FloatPointer` is a new name for a pointer to `float`, and `myString` is a new name for a character array of size 50.
+
+Using `typedef` can make your code more readable and easier to understand, especially when working with complex data structures or when using long, cumbersome data type names.
+
+
+
+Eg:
+
+#include <stdio.h>
+#include <string.h>
+
+typedef struct
+{
+    char name[25];
+    char password[15];
+    int id;
+} User;
+
+int main()
+{
+    User user1 = {"Lewis", "pwd123$$**", 123};
+    User user2 = {"Harry", "Password52", 124};
+    User user3 = {"Max", "Lalaland34", 125};
+
+    printf("%s, %s, %d\n", user1.name, user1.password, user1.id);
+    printf("%s, %s, %d\n", user2.name, user2.password, user2.id);
+    printf("%s, %s, %d\n", user3.name, user3.password, user3.id);
+
+    printf("\n");
+    return 0;
+}
