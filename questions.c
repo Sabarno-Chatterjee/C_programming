@@ -175,33 +175,93 @@
 marks among the given marks of
 20 students.*/
 
-#include <stdio.h>
+// #include <stdio.h>
 
-// Function to sort the marks array in ascending order using bubble sort algorithm
-void sort(int marks[], int size)
-{
-    for (int i = 0; i < size - 1; i++)
-    {
-        for (int j = 0; j < size - 1 - i; j++)
-        {
-            // Swap elements if they are in the wrong order
-            if (marks[j] > marks[j + 1])
-            {
-                int temp = marks[j];
-                marks[j] = marks[j + 1];
-                marks[j + 1] = temp;
-            }
-        }
-    }
-}
+// // Function to sort the marks array in ascending order using bubble sort algorithm
+// void sort(int marks[], int size)
+// {
+//     for (int i = 0; i < size - 1; i++)
+//     {
+//         for (int j = 0; j < size - 1 - i; j++)
+//         {
+//             // Swap elements if they are in the wrong order
+//             if (marks[j] > marks[j + 1])
+//             {
+//                 int temp = marks[j];
+//                 marks[j] = marks[j + 1];
+//                 marks[j + 1] = temp;
+//             }
+//         }
+//     }
+// }
+
+// int main()
+// {
+//     int marks[] = {80, 55, 90, 73, 23, 42, 87, 61, 79, 88, 92, 77, 65, 83, 70, 59, 94, 85, 72, 11};
+//     int size_of_array = sizeof(marks) / sizeof(marks[0]);
+
+//     sort(marks, size_of_array);
+//     printf("The minimum marks is: %d.\n", marks[0]);
+
+//     return 0;
+// }
+
+/*Write a program to find the string length without using strlen( ) function.*/
+
+// #include <stdio.h>
+
+// // Function to calculate the length of a string
+// int string_length(char string[])
+// {
+//     int count = 0;
+//     // Loop until the null terminator is encountered
+//     while (string[count] != '\0')
+//     {
+//         count += 1;
+//     }
+//     return count;
+// }
+
+// int main()
+// {
+//     char string[20];
+//     printf("Please enter a string to obtain its length.\n");
+//     scanf("%s", string);
+
+//     // Call the string_length function to get the length of the string
+//     printf("The length of the string is: %d.\n", string_length(string));
+//     return 0;
+// }
+
+/*Write a program to search an element in a
+given list of 20 elements using linear
+search.*/
+
+#include <stdio.h>
 
 int main()
 {
-    int marks[] = {80, 55, 90, 73, 23, 42, 87, 61, 79, 88, 92, 77, 65, 83, 70, 59, 94, 85, 72, 11};
-    int size_of_array = sizeof(marks) / sizeof(marks[0]);
+    int numbers[] = {17, 5, 22, 8, 14, 10, 3, 19, 27, 13, 6, 2, 11, 25, 7, 16, 1, 9, 4, 12};
+    int num, is_true = 1;
 
-    sort(marks, size_of_array);
-    printf("The minimum marks is: %d.\n", marks[0]);
+    printf("Enter the number you would like to search.\n");
+    scanf("%d", &num);
+
+    // Linear search algorithm
+    for (int i = 0; i < 20; i++)
+    {
+        if (num == numbers[i])
+        {
+            printf("The number exists at index %d.\n", i);
+            is_true = 0;
+            break;
+        }
+    }
+
+    if (is_true)
+    {
+        printf("The number does not exist in the list.\n");
+    }
 
     return 0;
 }
