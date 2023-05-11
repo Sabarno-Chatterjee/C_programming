@@ -237,31 +237,72 @@ marks among the given marks of
 given list of 20 elements using linear
 search.*/
 
+// #include <stdio.h>
+
+// int main()
+// {
+//     int numbers[] = {17, 5, 22, 8, 14, 10, 3, 19, 27, 13, 6, 2, 11, 25, 7, 16, 1, 9, 4, 12};
+//     int num, is_true = 1;
+
+//     printf("Enter the number you would like to search.\n");
+//     scanf("%d", &num);
+
+//     // Linear search algorithm
+//     for (int i = 0; i < 20; i++)
+//     {
+//         if (num == numbers[i])
+//         {
+//             printf("The number exists at index %d.\n", i);
+//             is_true = 0;
+//             break;
+//         }
+//     }
+
+//     if (is_true)
+//     {
+//         printf("The number does not exist in the list.\n");
+//     }
+
+//     return 0;
+// }
+
+/*Write a program to concatenate two strings
+without using the strcat( ) function.*/
+
 #include <stdio.h>
+
+void concate(char string1[], char string2[])
+{
+    char result[30]; // Buffer to store the concatenated string
+    int i, j;
+
+    // Copy characters from string1 to result
+    for (i = 0; string1[i] != '\0'; i++)
+    {
+        result[i] = string1[i];
+    }
+
+    // Append characters from string2 to result
+    for (j = 0; string2[j] != '\0'; j++)
+    {
+        result[i + j] = string2[j];
+    }
+
+    result[i + j] = '\0'; // Add the null-terminating character at the end
+    printf("The concatenated string is: %s.\n", result);
+}
 
 int main()
 {
-    int numbers[] = {17, 5, 22, 8, 14, 10, 3, 19, 27, 13, 6, 2, 11, 25, 7, 16, 1, 9, 4, 12};
-    int num, is_true = 1;
+    char string1[15], string2[15];
 
-    printf("Enter the number you would like to search.\n");
-    scanf("%d", &num);
+    printf("Enter the first string: \n");
+    scanf("%s", string1);
 
-    // Linear search algorithm
-    for (int i = 0; i < 20; i++)
-    {
-        if (num == numbers[i])
-        {
-            printf("The number exists at index %d.\n", i);
-            is_true = 0;
-            break;
-        }
-    }
+    printf("Enter the second string: \n");
+    scanf("%s", string2);
 
-    if (is_true)
-    {
-        printf("The number does not exist in the list.\n");
-    }
+    concate(string1, string2); // Call the concatenation function
 
     return 0;
 }
