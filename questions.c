@@ -366,41 +366,65 @@ library function.*/
 (i) Find the length of a string.
 (ii) Print the reverse of the string.*/
 
+// #include <stdio.h>
+
+// // Function to calculate the length of a string
+// int string_length(char string[])
+// {
+//     int count = 0;
+//     while (string[count] != '\0') // Loop until the null character is encountered
+//     {
+//         count += 1;
+//     }
+//     return count;
+// }
+
+// // Function to reverse a string
+// void reverse(char string[], int length, char reverse_string[])
+// {
+//     int j = 0;
+//     for (int i = length - 1; i >= 0; i--) // Iterate from the end of the string
+//     {
+//         reverse_string[j] = string[i]; // Assign characters in reverse order
+//         j += 1;
+//     }
+//     reverse_string[j] = '\0'; // Add null character at the end to terminate the reversed string
+// }
+
+// int main()
+// {
+//     char string[20], reverse_string[20];
+//     int length;
+//     printf("Enter a string to obtain its length: ");
+//     scanf("%s", string);
+//     length = string_length(string);
+//     printf("The length of the string is %d.\n", length);
+//     reverse(string, length, reverse_string);
+//     printf("The reversed string is: %s\n", reverse_string);
+//     return 0;
+// }
+
+// Pallindrome numbers
+
 #include <stdio.h>
+#include <string.h>
 
-// Function to calculate the length of a string
-int string_length(char string[])
+void pallindrome(int num)
 {
-    int count = 0;
-    while (string[count] != '\0') // Loop until the null character is encountered
+    int i = 0, check = 0;
+    while (num % 10 != 0)
     {
-        count += 1;
+        check =
     }
-    return count;
-}
-
-// Function to reverse a string
-void reverse(char string[], int length, char reverse_string[])
-{
-    int j = 0;
-    for (int i = length - 1; i >= 0; i--) // Iterate from the end of the string
-    {
-        reverse_string[j] = string[i]; // Assign characters in reverse order
-        j += 1;
-    }
-    reverse_string[j] = '\0'; // Add null character at the end to terminate the reversed string
 }
 
 int main()
 {
-    char string[20], reverse_string[20];
-    int length;
-    printf("Enter a string to obtain its length: ");
-    scanf("%s", string);
-    length = string_length(string);
-    printf("The length of the string is %d.\n", length);
-    reverse(string, length, reverse_string);
-    printf("The reversed string is: %s\n", reverse_string);
+    int num;
+    printf("Enter a number to check for pallindrome.\n");
+    scanf("%d", num);
+    pallindrome(num);
+
     return 0;
 }
 
