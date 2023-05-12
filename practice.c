@@ -88,13 +88,8 @@ isosceles, equilateral, scalene or right angled triangle.*/
 // Function to check if any side is equal to the hypotenuse of the triangle
 int hypotenuse(float a, float b, float c)
 {
-    float x, y, z;
-    x = sqrt(pow(a, 2) + pow(b, 2)); // Calculate the hypotenuse if a and b are the other two sides
-    y = sqrt(pow(b, 2) + pow(c, 2)); // Calculate the hypotenuse if b and c are the other two sides
-    z = sqrt(pow(c, 2) + pow(a, 2)); // Calculate the hypotenuse if c and a are the other two sides
 
-    // Check if any side matches the calculated hypotenuse
-    if (a == x || a == y || a == z || b == x || b == y || b == z || c == x || c == y || c == z)
+    if (a * a == b * b + c * c || b * b == a * a + c * c || c * c == a * a + b * b)
     {
         return 1; // Return 1 if a right-angled triangle is found
     }
