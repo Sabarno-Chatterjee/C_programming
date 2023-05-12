@@ -269,40 +269,140 @@ search.*/
 /*Write a program to concatenate two strings
 without using the strcat( ) function.*/
 
+// #include <stdio.h>
+
+// void concate(char string1[], char string2[])
+// {
+//     char result[30]; // Buffer to store the concatenated string
+//     int i, j;
+
+//     // Copy characters from string1 to result
+//     for (i = 0; string1[i] != '\0'; i++)
+//     {
+//         result[i] = string1[i];
+//     }
+
+//     // Append characters from string2 to result
+//     for (j = 0; string2[j] != '\0'; j++)
+//     {
+//         result[i + j] = string2[j];
+//     }
+
+//     result[i + j] = '\0'; // Add the null-terminating character at the end
+//     printf("The concatenated string is: %s.\n", result);
+// }
+
+// int main()
+// {
+//     char string1[15], string2[15];
+
+//     printf("Enter the first string: \n");
+//     scanf("%s", string1);
+
+//     printf("Enter the second string: \n");
+//     scanf("%s", string2);
+
+//     concate(string1, string2); // Call the concatenation function
+
+//     return 0;
+// }
+
+/*Write a C function isodd(num) that
+accepts an integer argument and returns 1
+if the argument is odd and 0 otherwise.*/
+
+// #include <stdio.h>
+
+// // The required function
+// int isodd(int num)
+// {
+//     if (num % 2 == 0) // Check if the number is divisible by 2
+//     {
+//         return 0; // If it is divisible by 2, it is even
+//     }
+//     else
+//     {
+//         return 1; // If it is not divisible by 2, it is odd
+//     }
+// }
+
+// int main()
+// {
+//     int num;
+//     printf("Enter a number: \n");
+//     scanf("%d", &num);
+
+//     printf("%d\n", isodd(num)); // Call the isodd() function and print the result
+
+//     return 0;
+// }
+
+/*Write a C program to implement STRING
+COPY operation that copies a string ‘‘str1’’
+to another string ‘‘str2’’ without using
+library function.*/
+
+// #include <stdio.h>
+
+// int main()
+// {
+//     char str1[10] = "Mamba"; // Source string
+//     char str2[10];           // Destination string
+//     int i;
+
+//     // Copy characters from str1 to str2
+//     for (i = 0; str1[i] != '\0'; i++)
+//     {
+//         str2[i] = str1[i];
+//     }
+
+//     str2[i] = '\0'; // Add null character at the end of str2 to terminate the string
+
+//     printf("%s\n", str2); // Print the copied string
+//     return 0;
+// }
+
+/*(b) Write a program to : 10
+(i) Find the length of a string.
+(ii) Print the reverse of the string.*/
+
 #include <stdio.h>
 
-void concate(char string1[], char string2[])
+// Function to calculate the length of a string
+int string_length(char string[])
 {
-    char result[30]; // Buffer to store the concatenated string
-    int i, j;
-
-    // Copy characters from string1 to result
-    for (i = 0; string1[i] != '\0'; i++)
+    int count = 0;
+    while (string[count] != '\0') // Loop until the null character is encountered
     {
-        result[i] = string1[i];
+        count += 1;
     }
+    return count;
+}
 
-    // Append characters from string2 to result
-    for (j = 0; string2[j] != '\0'; j++)
+// Function to reverse a string
+void reverse(char string[], int length, char reverse_string[])
+{
+    int j = 0;
+    for (int i = length - 1; i >= 0; i--) // Iterate from the end of the string
     {
-        result[i + j] = string2[j];
+        reverse_string[j] = string[i]; // Assign characters in reverse order
+        j += 1;
     }
-
-    result[i + j] = '\0'; // Add the null-terminating character at the end
-    printf("The concatenated string is: %s.\n", result);
+    reverse_string[j] = '\0'; // Add null character at the end to terminate the reversed string
 }
 
 int main()
 {
-    char string1[15], string2[15];
-
-    printf("Enter the first string: \n");
-    scanf("%s", string1);
-
-    printf("Enter the second string: \n");
-    scanf("%s", string2);
-
-    concate(string1, string2); // Call the concatenation function
-
+    char string[20], reverse_string[20];
+    int length;
+    printf("Enter a string to obtain its length: ");
+    scanf("%s", string);
+    length = string_length(string);
+    printf("The length of the string is %d.\n", length);
+    reverse(string, length, reverse_string);
+    printf("The reversed string is: %s\n", reverse_string);
     return 0;
 }
+
+/*Write a program to test whether the given
+string is a palindrome or not.*/
