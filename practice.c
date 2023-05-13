@@ -127,47 +127,87 @@ isosceles, equilateral, scalene or right angled triangle.*/
 //     return 0;
 // }
 
-/*Write a program to print all the ASCII values and their
-equivalent characters using a while loop. The ASCII values
-vary from 0 to 255.*/
-
 // Linear search
+
+// #include <stdio.h>
+
+// void search(int num, int numbers[], int size)
+// {
+//     int not_exist = 1;
+
+//     // Iterate through the numbers array to search for the target number
+//     for (int i = 0; i < size; i++)
+//     {
+//         if (num == numbers[i])
+//         { // If the number is found
+//             printf("The number %d exists at index: %d.\n", num, i);
+//             not_exist = 0;
+//             break; // Exit the loop since the number is found
+//         }
+//     }
+
+//     // If the number is not found in the list
+//     if (not_exist)
+//     {
+//         printf("The number %d does not exist in the list.\n", num);
+//     }
+// }
+
+// int main()
+// {
+//     int numbers[] = {45, 23, 67, 45, 32, 89, 9, 12, 54, 87, 65, 32, 49, 87, 23, 11, 35, 76, 98, 7, 43, 56, 81, 34, 77, 99, 52, 46, 14, 5, 60, 72, 38, 42, 88, 25, 91, 18, 66, 93, 2, 79, 39, 62, 16, 30, 69, 59, 74, 53};
+//     int num;
+
+//     printf("Enter a number to search its index.\n");
+//     scanf("%d", &num);
+
+//     int size = sizeof(numbers) / sizeof(numbers[0]);
+
+//     search(num, numbers, size); // Call the search function
+
+//     return 0;
+// }
+
+// Prime numbers
 
 #include <stdio.h>
 
-void search(int num, int numbers[], int size)
+void check_prime(int num)
 {
-    int not_exist = 1;
 
-    // Iterate through the numbers array to search for the target number
-    for (int i = 0; i < size; i++)
+    int prime = 1;
+    for (int i = 2; i <= num / 2; i++)
     {
-        if (num == numbers[i])
-        { // If the number is found
-            printf("The number %d exists at index: %d.\n", num, i);
-            not_exist = 0;
-            break; // Exit the loop since the number is found
+        if (num % i == 0)
+        {
+            printf("The number is not prime.\n");
+            prime = 0;
+            break;
         }
     }
-
-    // If the number is not found in the list
-    if (not_exist)
+    if (prime)
     {
-        printf("The number %d does not exist in the list.\n", num);
+        printf("The number is prime.\n");
     }
 }
 
 int main()
 {
-    int numbers[] = {45, 23, 67, 45, 32, 89, 9, 12, 54, 87, 65, 32, 49, 87, 23, 11, 35, 76, 98, 7, 43, 56, 81, 34, 77, 99, 52, 46, 14, 5, 60, 72, 38, 42, 88, 25, 91, 18, 66, 93, 2, 79, 39, 62, 16, 30, 69, 59, 74, 53};
     int num;
-
-    printf("Enter a number to search its index.\n");
+    printf("Enter a number to check for prime.\n");
     scanf("%d", &num);
+    if (num == 1)
+    {
+        printf("1 is not a prime or composite number.\n");
+        printf("Enter a number to check for prime.\n");
+        scanf("%d", &num);
+    }
 
-    int size = sizeof(numbers) / sizeof(numbers[0]);
-
-    search(num, numbers, size); // Call the search function
+    check_prime(num);
 
     return 0;
 }
+
+/*Write a program to print all the ASCII values and their
+equivalent characters using a while loop. The ASCII values
+vary from 0 to 255.*/

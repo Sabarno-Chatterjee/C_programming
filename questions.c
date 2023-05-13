@@ -404,26 +404,87 @@ library function.*/
 //     return 0;
 // }
 
+// Factorial using recursion
+
+// #include <stdio.h>
+
+// int factorial(int num)
+// {
+//     if (num == 0 || num == 1)
+//     {
+//         return 1;
+//     }
+//     else
+//     {
+//         return num * factorial(num - 1);
+//     }
+// }
+
+// int main()
+// {
+//     int num;
+//     printf("Enter a number to obtain it's factorial.\n");
+//     scanf("%d", &num);
+//     printf("The factorial of %d is %d\n", num, factorial(num));
+//     return 0;
+// }
+
 // Pallindrome numbers
 
 #include <stdio.h>
-#include <string.h>
+#include <stdbool.h>
 
-void pallindrome(int num)
+// Function to check if a number is a palindrome
+bool palindrome(int num)
 {
-    int i = 0, check = 0;
-    while (num % 10 != 0)
+    int reversed_num = 0;
+    int original_num = num;
+
+    // Reverse the number
+    while (num != 0)
     {
-        check =
+        int remainder = num % 10;
+        reversed_num = reversed_num * 10 + remainder;
+        num = num / 10;
     }
+
+    // Check if the original number is equal to the reversed number
+    return (original_num == reversed_num);
 }
 
 int main()
 {
     int num;
-    printf("Enter a number to check for pallindrome.\n");
-    scanf("%d", num);
-    pallindrome(num);
+    printf("Enter a number to check for palindrome: ");
+    scanf("%d", &num);
+
+    // Test for palindrome and print the result
+    if (palindrome(num))
+    {
+        printf("The number is a palindrome.\n");
+    }
+    else
+    {
+        printf("The number is not a palindrome.\n");
+    }
+
+    // Additional tests
+    // Uncomment the following lines to test for multiple numbers
+
+    /*int testNumbers[] = {121, 1234321, 987654321, 123456789, 1221};
+    int numTests = sizeof(testNumbers) / sizeof(testNumbers[0]);
+
+    for (int i = 0; i < numTests; i++)
+    {
+        if (palindrome(testNumbers[i]))
+        {
+            printf("%d is a palindrome.\n", testNumbers[i]);
+        }
+        else
+        {
+            printf("%d is not a palindrome.\n", testNumbers[i]);
+        }
+    }*/
 
     return 0;
 }
