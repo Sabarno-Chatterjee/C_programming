@@ -82,51 +82,92 @@ the list.*/
 keyboard, write a program to check whether the triangle is
 isosceles, equilateral, scalene or right angled triangle.*/
 
+// #include <stdio.h>
+// #include <math.h>
+
+// // Function to check if any side is equal to the hypotenuse of the triangle
+// int hypotenuse(float a, float b, float c)
+// {
+
+//     if (a * a == b * b + c * c || b * b == a * a + c * c || c * c == a * a + b * b)
+//     {
+//         return 1; // Return 1 if a right-angled triangle is found
+//     }
+//     else
+//     {
+//         return 0; // Return 0 if not a right-angled triangle
+//     }
+// }
+
+// int main()
+// {
+//     float a, b, c;
+
+//     printf("Enter the three sides respectively.\n");
+//     scanf("%f%f%f", &a, &b, &c);
+
+//     // Check the types of triangles based on the provided input sides
+//     if (hypotenuse(a, b, c))
+//     {
+//         printf("It is a right-angled triangle.\n");
+//     }
+//     else if (a == b && b == c)
+//     {
+//         printf("It is an equilateral triangle.\n");
+//     }
+//     else if (a == b || b == c || a == c)
+//     {
+//         printf("It is an isosceles triangle.\n");
+//     }
+//     else
+//     {
+//         printf("It is a scalene triangle.\n");
+//     }
+
+//     return 0;
+// }
+
+/*Write a program to print all the ASCII values and their
+equivalent characters using a while loop. The ASCII values
+vary from 0 to 255.*/
+
+// Linear search
+
 #include <stdio.h>
-#include <math.h>
 
-// Function to check if any side is equal to the hypotenuse of the triangle
-int hypotenuse(float a, float b, float c)
+void search(int num, int numbers[], int size)
 {
+    int not_exist = 1;
 
-    if (a * a == b * b + c * c || b * b == a * a + c * c || c * c == a * a + b * b)
+    // Iterate through the numbers array to search for the target number
+    for (int i = 0; i < size; i++)
     {
-        return 1; // Return 1 if a right-angled triangle is found
+        if (num == numbers[i])
+        { // If the number is found
+            printf("The number %d exists at index: %d.\n", num, i);
+            not_exist = 0;
+            break; // Exit the loop since the number is found
+        }
     }
-    else
+
+    // If the number is not found in the list
+    if (not_exist)
     {
-        return 0; // Return 0 if not a right-angled triangle
+        printf("The number %d does not exist in the list.\n", num);
     }
 }
 
 int main()
 {
-    float a, b, c;
+    int numbers[] = {45, 23, 67, 45, 32, 89, 9, 12, 54, 87, 65, 32, 49, 87, 23, 11, 35, 76, 98, 7, 43, 56, 81, 34, 77, 99, 52, 46, 14, 5, 60, 72, 38, 42, 88, 25, 91, 18, 66, 93, 2, 79, 39, 62, 16, 30, 69, 59, 74, 53};
+    int num;
 
-    printf("Enter the three sides respectively.\n");
-    scanf("%f%f%f", &a, &b, &c);
+    printf("Enter a number to search its index.\n");
+    scanf("%d", &num);
 
-    // Check the types of triangles based on the provided input sides
-    if (hypotenuse(a, b, c))
-    {
-        printf("It is a right-angled triangle.\n");
-    }
-    else if (a == b && b == c)
-    {
-        printf("It is an equilateral triangle.\n");
-    }
-    else if (a == b || b == c || a == c)
-    {
-        printf("It is an isosceles triangle.\n");
-    }
-    else
-    {
-        printf("It is a scalene triangle.\n");
-    }
+    int size = sizeof(numbers) / sizeof(numbers[0]);
+
+    search(num, numbers, size); // Call the search function
 
     return 0;
 }
-
-/*Write a program to print all the ASCII values and their
-equivalent characters using a while loop. The ASCII values
-vary from 0 to 255.*/
