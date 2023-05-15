@@ -462,3 +462,88 @@ than 3, then the program should do nothing.*/
 
 //     return 0;
 // }
+
+/*In a company an employee is paid as under:If his basic salary is less than Rs. 1500, then HRA = 10% of basic
+salary and DA = 90% of basic salary. If his salary is either equal to
+or above Rs. 1500, then HRA = Rs. 500 and DA = 98% of basic
+salary. If the employee's salary is input through the keyboard write
+a program to find his gross salary.*/
+
+// #include <stdio.h>
+
+// int main()
+// {
+//     int salary, gross, da = 0, hra = 0;
+//     printf("Salary?\n");
+//     scanf("%d", &salary);
+//     if (salary < 1500)
+//     {
+//         hra = 0.1 * salary;
+//         da = 0.9 * salary;
+//     }
+//     else
+//     {
+//         hra = 500;
+//         da = 0.98 * salary;
+//     }
+//     printf("The HRA is %d and the DA is %d.\n", hra, da);
+
+//     return 0;
+// }
+
+/*The marks obtained by a student in 5 different
+subjects are input through the keyboard. The student gets a
+division as per the following rules:
+Percentage above or equal to 60 - First division
+Percentage between 50 and 59 - Second division
+Percentage between 40 and 49 - Third division
+Percentage less than 40 - Fail
+Write a program to calculate the division obtained by the student.*/
+
+// #include <stdio.h>
+
+// int main()
+// {
+//     int sub1, sub2, sub3, sub4, sub5;
+//     float percent;
+//     printf("Enter your marks.\n");
+//     scanf("%d%d%d%d%d", &sub1, &sub2, &sub3, &sub4, &sub5);
+//     percent = (sub1 + sub2 + sub3 + sub4 + sub5) / 5;
+//     if (percent >= 60)
+//         printf("First division");
+//     else if (percent >= 50 && percent <= 59)
+//         printf("Second division");
+//     else if (percent >= 40 && percent <= 49)
+//         printf("Third division");
+//     else
+//         printf("Fail");
+
+//     printf("\n");
+//     return 0;
+// }
+
+/*A company insures its drivers in the following
+cases:
+− If the driver is married.
+− If the driver is unmarried, male & above 30 years of age.
+− If the driver is unmarried, female & above 25 years of age.
+In all other cases the driver is not insured. If the marital status, sex
+and age of the driver are the inputs, write a program to determine
+whether the driver is to be insured or not.*/
+
+#include <stdio.h>
+
+int main()
+{
+    char ms, sex;
+    int age;
+    printf("Enter the marital status(Y/N), sex(M/F) and age in order.\n");
+    scanf("%c%c%d", &ms, &sex, &age);
+    if ((ms == 'Y') || (ms == 'N' && sex == 'M' && age > 30) || (ms == 'N' && sex == 'F' && age > 25))
+        printf("To be insured.");
+    else
+        printf("Not to be insured.");
+
+    printf("\n");
+    return 0;
+}
