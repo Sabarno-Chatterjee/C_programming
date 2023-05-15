@@ -531,19 +531,194 @@ In all other cases the driver is not insured. If the marital status, sex
 and age of the driver are the inputs, write a program to determine
 whether the driver is to be insured or not.*/
 
+// #include <stdio.h>
+
+// int main()
+// {
+//     char ms, sex;
+//     int age;
+//     printf("Enter the marital status(Y/N), sex(M/F) and age in order.\n");
+//     scanf("%c%c%d", &ms, &sex, &age);
+//     if ((ms == 'Y') || (ms == 'N' && sex == 'M' && age > 30) || (ms == 'N' && sex == 'F' && age > 25))
+//         printf("To be insured.");
+//     else
+//         printf("Not to be insured.");
+
+//     printf("\n");
+//     return 0;
+// }
+
+/*If cost price and selling price of an item is input through the
+keyboard, write a program to determine whether the seller has
+made profit or incurred loss. Also determine how much profit
+he made or loss he incurred.*/
+
+// #include <stdio.h>
+
+// int main()
+// {
+//     int cp, sp, p, l;
+//     scanf("%d%d", &cp, &sp);
+//     if (sp > cp)
+//     {
+//         p = sp - cp;
+//         printf("The seller has incurred a profit of : %d.\n", p);
+//     }
+//     else
+//     {
+//         l = cp - sp;
+//         printf("The seller has incurred a loss of : %d.\n", l);
+//     }
+
+//     return 0;
+// }
+
+/*Any integer is input through the keyboard. Write a program to
+find out whether it is an odd number or even number.*/
+
+// #include <stdio.h>
+
+// int main()
+// {
+//     int number;
+//     scanf("%d", &number);
+//     (number % 2 == 0) ? printf("Even\n") : printf("Odd\n");
+
+//     return 0;
+// }
+
+/*Any year is input through the keyboard. Write a program to
+determine whether the year is a leap year or not.*/
+
+// #include <stdio.h>
+
+// int leap_year(int year)
+// {
+//     if (year % 400 == 0)
+//         return 1;
+//     if (year % 100 == 0)
+//         return 0;
+//     if (year % 4 == 0)
+//         return 1;
+
+//     return 0;
+// }
+
+// int main()
+// {
+//     int year;
+//     scanf("%d", &year);
+//     leap_year(year) ? printf("Leap year.\n") : printf("Not leap year.\n");
+
+//     return 0;
+// }
+
+/*A five-digit number is entered through the keyboard. Write a
+program to obtain the reversed number and to determine
+whether the original and reversed numbers are equal or not.*/
+
+// #include <stdio.h>
+// int pallindrome(int number)
+// {
+//     int original_num = number, reversed_num = 0;
+
+//     while (number)
+//     {
+//         reversed_num = reversed_num * 10 + number % 10;
+//         number /= 10;
+//     }
+//     return (original_num == reversed_num) ? 1 : 0;
+// }
+// int main()
+// {
+//     int number;
+//     scanf("%d", &number);
+//     pallindrome(number) ? printf("Equal.\n") : printf("Not equal.\n");
+
+//     return 0;
+// }
+
+/*If the ages of Ram, Shyam and Ajay are input through the
+keyboard, write a program to determine the youngest of the
+three.*/
+
+// #include <stdio.h>
+
+// int main()
+
+// {
+//     int r, s, a;
+//     scanf("%d%d%d", &r, &s, &a);
+//     if (r < a && r < s)
+//         printf("Ram is youngest.\n");
+//     else if (s < a && s < a)
+//         printf("Shyam is youngest.\n");
+//     else
+//         printf("Ajay is youngest.\n");
+//     return 0;
+// }
+
+/*Write a program to check whether a triangle is valid or not,
+when the three angles of the triangle are entered through the
+keyboard. A triangle is valid if the sum of all the three angles
+is equal to 180 degrees.*/
+
+// #include <stdio.h>
+// int main()
+// {
+//     int a, b, c;
+//     scanf("%d%d%d", &a, &b, &c);
+//     ((a + b + c) == 180) ? printf("Valid\n") : printf("Not valid\n");
+//     return 0;
+// }
+
+/*Find the absolute value of a number entered through the
+keyboard.*/
+
+// #include <stdio.h>
+// int main()
+// {
+//     int num;
+//     scanf("%d", &num);
+//     if (num < 0)
+//         printf("%d\n", num * -1);
+//     return 0;
+// }
+
+/*Given the length and breadth of a rectangle, write a program to
+find whether the area of the rectangle is greater than its
+perimeter. For example, the area of the rectangle with length = 5
+and breadth = 4 is greater than its perimeter.*/
+// #include <stdio.h>
+
+// int main()
+// {
+//     int l, b, a, p;
+//     scanf("%d%d", &l, &b);
+//     a = l * b;
+//     p = 2 * (l + b);
+//     (a > p) ? printf("True.\n") : printf("False.\n");
+//     return 0;
+// }
+
+/*Given three points (x1, y1), (x2, y2) and (x3, y3), write a
+program to check if all the three points fall on one straight line.*/
+
 #include <stdio.h>
+
+int slope(int x1, int x2, int y1, int y2)
+{
+    int m = (y2 - y1) * (x2 - x1);
+    return m;
+}
 
 int main()
 {
-    char ms, sex;
-    int age;
-    printf("Enter the marital status(Y/N), sex(M/F) and age in order.\n");
-    scanf("%c%c%d", &ms, &sex, &age);
-    if ((ms == 'Y') || (ms == 'N' && sex == 'M' && age > 30) || (ms == 'N' && sex == 'F' && age > 25))
-        printf("To be insured.");
-    else
-        printf("Not to be insured.");
-
-    printf("\n");
+    int x1, x2, x3, y1, y2, y3, m1, m2;
+    printf("Enter the co-ordinates.\n");
+    scanf("%d%d%d%d%d%d", &x1, &y1, &x2, &y2, &x3, &y3);
+    m1 = slope(x1, x2, y1, y2);
+    m2 = slope(x2, x3, y2, y3);
+    (m1 == m2) ? printf("Collinear.\n") : printf("Not collinear.\n");
     return 0;
 }
