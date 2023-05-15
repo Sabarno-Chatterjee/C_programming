@@ -745,32 +745,120 @@ x-axis, y-axis or at the origin, viz. (0, 0).*/
 program to determine whether the character entered is a
 capital letter, a small case letter, a digit or a special symbol.*/
 
+// #include <stdio.h>
+
+// void check(char c)
+// {
+
+//     if (c >= 97 && c <= 122)
+//         printf("Small case letter.\n");
+//     else if (c >= 65 && c <= 90)
+//         printf("Capital letter.\n");
+//     else if (c >= 48 && c <= 57)
+//         printf("Digit.\n");
+//     else
+//         printf("Special character.\n");
+// }
+
+// int main()
+// {
+//     char c;
+//     scanf("%c", &c);
+//     check(c);
+//     // Test code:
+//     // char characters[] = {'j', 'b', '4', '$', '*', '9', 's', 'C', '5'};
+
+//     // for (int i = 0; i < sizeof(characters) / sizeof(char); i++)
+//     // {
+//     //     check(characters[i]);
+//     // }
+//     return 0;
+// }
+
+/*A certain grade of steel is graded according to the following
+conditions:
+(i) Hardness must be greater than 50
+(ii) Carbon content must be less than 0.7
+(iii) Tensile strength must be greater than 5600
+The grades are as follows:
+Grade is 10 if all three conditions are met
+Grade is 9 if conditions (i) and (ii) are met
+Grade is 8 if conditions (ii) and (iii) are met
+Grade is 7 if conditions (i) and (iii) are met
+Grade is 6 if only one condition is met
+Grade is 5 if none of the conditions are met
+Write a program, which will require the user to give values of
+hardness, carbon content and tensile strength of the steel
+under consideration and output the grade of the steel.*/
+
 #include <stdio.h>
 
-void check(char c)
+void steel_grade(float hardness, float carbon, float tensile)
 {
 
-    if (c >= 97 && c <= 122)
-        printf("Small case letter.\n");
-    else if (c >= 65 && c <= 90)
-        printf("Capital letter.\n");
-    else if (c >= 48 && c <= 57)
-        printf("Digit.\n");
+    if (hardness > 50.0 && carbon < 0.7 && tensile > 5600.0)
+        printf("Grade 10.\n");
+    else if (hardness > 50.0 && carbon < 0.7)
+        printf("Grade 9.\n");
+    else if (carbon < 0.7 && tensile > 5600.0)
+        printf("Grade 8.\n");
+    else if (hardness > 50.0 && tensile > 5600.0)
+        printf("Grade 7.\n");
+    else if (hardness > 50.0 || carbon < 0.7 || tensile > 5600.0)
+        printf("Grade 6.\n");
     else
-        printf("Special character.\n");
+        printf("Grade 5.\n");
 }
 
 int main()
 {
-    char c;
-    scanf("%c", &c);
-    check(c);
-    // Test code:
-    // char characters[] = {'j', 'b', '4', '$', '*', '9', 's', 'C', '5'};
+    float hardness, carbon, tensile;
+    printf("Enter the values for hardness, carbon content and tensile strength.\n");
+    scanf("%f%f%f", &hardness, &carbon, &tensile);
+    steel_grade(hardness, carbon, tensile);
 
-    // for (int i = 0; i < sizeof(characters) / sizeof(char); i++)
-    // {
-    //     check(characters[i]);
-    // }
+    // Test code:
+    // printf("Test Case 1: Grade 10\n");
+    // hardness = 60.0;
+    // carbon = 0.5;
+    // tensile = 6000.0;
+    // steel_grade(hardness, carbon, tensile);
+    // printf("\n");
+
+    // printf("Test Case 2: Grade 9\n");
+    // hardness = 60.0;
+    // carbon = 0.5;
+    // tensile = 5000.0;
+    // steel_grade(hardness, carbon, tensile);
+    // printf("\n");
+
+    // printf("Test Case 3: Grade 8\n");
+    // hardness = 40.0;
+    // carbon = 0.6;
+    // tensile = 6000.0;
+    // steel_grade(hardness, carbon, tensile);
+    // printf("\n");
+
+    // printf("Test Case 4: Grade 7\n");
+    // hardness = 70.0;
+    // carbon = 0.8;
+    // tensile = 6000.0;
+    // steel_grade(hardness, carbon, tensile);
+    // printf("\n");
+
+    // printf("Test Case 5: Grade 6\n");
+    // hardness = 70.0;
+    // carbon = 0.8;
+    // tensile = 4000.0;
+    // steel_grade(hardness, carbon, tensile);
+    // printf("\n");
+
+    // printf("Test Case 6: Grade 5\n");
+    // hardness = 40.0;
+    // carbon = 0.8;
+    // tensile = 4000.0;
+    // steel_grade(hardness, carbon, tensile);
+    // printf("\n");
+
     return 0;
 }
