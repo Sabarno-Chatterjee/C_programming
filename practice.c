@@ -704,21 +704,73 @@ and breadth = 4 is greater than its perimeter.*/
 /*Given three points (x1, y1), (x2, y2) and (x3, y3), write a
 program to check if all the three points fall on one straight line.*/
 
+// #include <stdio.h>
+
+// int slope(int x1, int x2, int y1, int y2)
+// {
+//     int m = (y2 - y1) * (x2 - x1);
+//     return m;
+// }
+
+// int main()
+// {
+//     int x1, x2, x3, y1, y2, y3, m1, m2;
+//     printf("Enter the co-ordinates.\n");
+//     scanf("%d%d%d%d%d%d", &x1, &y1, &x2, &y2, &x3, &y3);
+//     m1 = slope(x1, x2, y1, y2);
+//     m2 = slope(x2, x3, y2, y3);
+//     (m1 == m2) ? printf("Collinear.\n") : printf("Not collinear.\n");
+//     return 0;
+// }
+
+/*Given a point (x, y), write a program to find out if it lies on the
+x-axis, y-axis or at the origin, viz. (0, 0).*/
+
+// #include <stdio.h>
+
+// int main()
+// {
+//     int x, y, result;
+//     scanf("%d%d", &x, &y);
+//     if ((x > 0) && (y == 0))
+//         printf("X-axis\n");
+//     else if ((y > 0) && (x == 0))
+//         printf("Y-axis\n");
+//     else if (x == 0 && y == 0)
+//         printf("At the origin.\n");
+//     return 0;
+// }
+
+/*Any character is entered through the keyboard, write a
+program to determine whether the character entered is a
+capital letter, a small case letter, a digit or a special symbol.*/
+
 #include <stdio.h>
 
-int slope(int x1, int x2, int y1, int y2)
+void check(char c)
 {
-    int m = (y2 - y1) * (x2 - x1);
-    return m;
+
+    if (c >= 97 && c <= 122)
+        printf("Small case letter.\n");
+    else if (c >= 65 && c <= 90)
+        printf("Capital letter.\n");
+    else if (c >= 48 && c <= 57)
+        printf("Digit.\n");
+    else
+        printf("Special character.\n");
 }
 
 int main()
 {
-    int x1, x2, x3, y1, y2, y3, m1, m2;
-    printf("Enter the co-ordinates.\n");
-    scanf("%d%d%d%d%d%d", &x1, &y1, &x2, &y2, &x3, &y3);
-    m1 = slope(x1, x2, y1, y2);
-    m2 = slope(x2, x3, y2, y3);
-    (m1 == m2) ? printf("Collinear.\n") : printf("Not collinear.\n");
+    char c;
+    scanf("%c", &c);
+    check(c);
+    // Test code:
+    // char characters[] = {'j', 'b', '4', '$', '*', '9', 's', 'C', '5'};
+
+    // for (int i = 0; i < sizeof(characters) / sizeof(char); i++)
+    // {
+    //     check(characters[i]);
+    // }
     return 0;
 }
