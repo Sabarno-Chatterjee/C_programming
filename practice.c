@@ -791,74 +791,118 @@ Write a program, which will require the user to give values of
 hardness, carbon content and tensile strength of the steel
 under consideration and output the grade of the steel.*/
 
-#include <stdio.h>
+// #include <stdio.h>
 
-void steel_grade(float hardness, float carbon, float tensile)
-{
+// void steel_grade(float hardness, float carbon, float tensile)
+// {
 
-    if (hardness > 50.0 && carbon < 0.7 && tensile > 5600.0)
-        printf("Grade 10.\n");
-    else if (hardness > 50.0 && carbon < 0.7)
-        printf("Grade 9.\n");
-    else if (carbon < 0.7 && tensile > 5600.0)
-        printf("Grade 8.\n");
-    else if (hardness > 50.0 && tensile > 5600.0)
-        printf("Grade 7.\n");
-    else if (hardness > 50.0 || carbon < 0.7 || tensile > 5600.0)
-        printf("Grade 6.\n");
-    else
-        printf("Grade 5.\n");
-}
+//     if (hardness > 50.0 && carbon < 0.7 && tensile > 5600.0)
+//         printf("Grade 10.\n");
+//     else if (hardness > 50.0 && carbon < 0.7)
+//         printf("Grade 9.\n");
+//     else if (carbon < 0.7 && tensile > 5600.0)
+//         printf("Grade 8.\n");
+//     else if (hardness > 50.0 && tensile > 5600.0)
+//         printf("Grade 7.\n");
+//     else if (hardness > 50.0 || carbon < 0.7 || tensile > 5600.0)
+//         printf("Grade 6.\n");
+//     else
+//         printf("Grade 5.\n");
+// }
 
-int main()
-{
-    float hardness, carbon, tensile;
-    printf("Enter the values for hardness, carbon content and tensile strength.\n");
-    scanf("%f%f%f", &hardness, &carbon, &tensile);
-    steel_grade(hardness, carbon, tensile);
+// int main()
+// {
+//     float hardness, carbon, tensile;
+//     printf("Enter the values for hardness, carbon content and tensile strength.\n");
+//     scanf("%f%f%f", &hardness, &carbon, &tensile);
+//     steel_grade(hardness, carbon, tensile);
 
-    // Test code:
-    // printf("Test Case 1: Grade 10\n");
-    // hardness = 60.0;
-    // carbon = 0.5;
-    // tensile = 6000.0;
-    // steel_grade(hardness, carbon, tensile);
-    // printf("\n");
+//     // Test code:
+//     // printf("Test Case 1: Grade 10\n");
+//     // hardness = 60.0;
+//     // carbon = 0.5;
+//     // tensile = 6000.0;
+//     // steel_grade(hardness, carbon, tensile);
+//     // printf("\n");
 
-    // printf("Test Case 2: Grade 9\n");
-    // hardness = 60.0;
-    // carbon = 0.5;
-    // tensile = 5000.0;
-    // steel_grade(hardness, carbon, tensile);
-    // printf("\n");
+//     // printf("Test Case 2: Grade 9\n");
+//     // hardness = 60.0;
+//     // carbon = 0.5;
+//     // tensile = 5000.0;
+//     // steel_grade(hardness, carbon, tensile);
+//     // printf("\n");
 
-    // printf("Test Case 3: Grade 8\n");
-    // hardness = 40.0;
-    // carbon = 0.6;
-    // tensile = 6000.0;
-    // steel_grade(hardness, carbon, tensile);
-    // printf("\n");
+//     // printf("Test Case 3: Grade 8\n");
+//     // hardness = 40.0;
+//     // carbon = 0.6;
+//     // tensile = 6000.0;
+//     // steel_grade(hardness, carbon, tensile);
+//     // printf("\n");
 
-    // printf("Test Case 4: Grade 7\n");
-    // hardness = 70.0;
-    // carbon = 0.8;
-    // tensile = 6000.0;
-    // steel_grade(hardness, carbon, tensile);
-    // printf("\n");
+//     // printf("Test Case 4: Grade 7\n");
+//     // hardness = 70.0;
+//     // carbon = 0.8;
+//     // tensile = 6000.0;
+//     // steel_grade(hardness, carbon, tensile);
+//     // printf("\n");
 
-    // printf("Test Case 5: Grade 6\n");
-    // hardness = 70.0;
-    // carbon = 0.8;
-    // tensile = 4000.0;
-    // steel_grade(hardness, carbon, tensile);
-    // printf("\n");
+//     // printf("Test Case 5: Grade 6\n");
+//     // hardness = 70.0;
+//     // carbon = 0.8;
+//     // tensile = 4000.0;
+//     // steel_grade(hardness, carbon, tensile);
+//     // printf("\n");
 
-    // printf("Test Case 6: Grade 5\n");
-    // hardness = 40.0;
-    // carbon = 0.8;
-    // tensile = 4000.0;
-    // steel_grade(hardness, carbon, tensile);
-    // printf("\n");
+//     // printf("Test Case 6: Grade 5\n");
+//     // hardness = 40.0;
+//     // carbon = 0.8;
+//     // tensile = 4000.0;
+//     // steel_grade(hardness, carbon, tensile);
+//     // printf("\n");
 
-    return 0;
-}
+//     return 0;
+// }
+
+/*A library charges a fine for every book returned late. For first
+5 days the fine is 50 paise, for 6-10 days fine is one rupee and
+above 10 days fine is 5 rupees. If you return the book after 30
+days your membership will be cancelled. Write a program to
+accept the number of days the member is late to return the
+book and display the fine or the appropriate message.*/
+
+// #include <stdio.h>
+
+// int main()
+// {
+//     int days_late;
+//     scanf("%d", &days_late);
+//     if (days_late <= 5)
+//         printf("Fine of 50 paise.\n");
+//     else if (days_late >= 6 && days_late <= 10)
+//         printf("Fine of 1 Rupee.\n");
+//     else if (days_late > 10)
+//         printf("Fine of 5 Rupees.\n");
+//     else
+//         printf("Membership will be cancelled.\n");
+
+//     return 0;
+// }
+
+/*If the three sides of a triangle are entered through the
+keyboard, write a program to check whether the triangle is
+valid or not. The triangle is valid if the sum of two sides is
+greater than the largest of the three sides.*/
+
+// #include <stdio.h>
+
+// int main()
+// {
+//     int a, b, c;
+//     scanf("%d%d%d", &a, &b, &c);
+//     if ((a + b > c) && (a + c > b) && (b + c > a))
+//         printf("It's a valid triangle.\n");
+//     else
+//         printf("It's not a valid triangle.\n");
+
+//     return 0;
+// }
