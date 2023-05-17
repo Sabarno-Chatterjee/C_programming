@@ -906,3 +906,37 @@ greater than the largest of the three sides.*/
 
 //     return 0;
 // }
+
+/*Write a menu driven program which has following options:
+1. Factorial of a number.
+2. Prime or not
+3. Odd or even
+4. Exit*/
+
+#include <stdio.h>
+#include <stdbool.h>
+
+int factorial(int num)
+{
+    if (num == 0)
+    {
+        return 1;
+    }
+    else
+    {
+        return num * factorial(num - 1);
+    }
+}
+
+int main()
+{
+    // bool run_program = true;
+
+    // Factorial
+    int number;
+    printf("Enter a number to obtain it's factorial.\n");
+    scanf("%d", &number);
+    printf("Factorial: %d\n", factorial(number));
+
+    return 0;
+}
