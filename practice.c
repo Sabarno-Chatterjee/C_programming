@@ -917,6 +917,7 @@ greater than the largest of the three sides.*/
 #include <math.h>
 #include <stdbool.h>
 
+// Function to calculate factorial
 int factorial(int num)
 {
     if (num == 0)
@@ -929,6 +930,7 @@ int factorial(int num)
     }
 }
 
+// Function to check if a number is prime
 void prime(int num)
 {
     int is_prime = 1;
@@ -948,6 +950,7 @@ void prime(int num)
     }
 }
 
+// Function to check if a number is odd or even
 void odd_or_even(int num)
 {
     if (num % 2 == 0)
@@ -972,26 +975,29 @@ int main()
         {
         case 1:
             // Factorial
-            printf("Enter a number to obtain it's factorial.\n");
+            printf("Enter a number to obtain its factorial.\n");
             scanf("%d", &number);
             printf("\nFactorial: %d\n", factorial(number));
-
             break;
+
         case 2:
             // Prime
             printf("Enter a number to check for prime.\n");
             scanf("%d", &number);
             prime(number);
-
             break;
+
         case 3:
             // Odd or Even
             printf("Enter a number to check for odd/even.\n");
             scanf("%d", &number);
             odd_or_even(number);
             break;
+
         case 4:
+            printf("Thank you.\n");
             run_program = false;
+            break;
         }
     }
 
