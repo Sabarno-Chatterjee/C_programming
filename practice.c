@@ -914,6 +914,7 @@ greater than the largest of the three sides.*/
 4. Exit*/
 
 #include <stdio.h>
+#include <math.h>
 #include <stdbool.h>
 
 int factorial(int num)
@@ -928,15 +929,71 @@ int factorial(int num)
     }
 }
 
+void prime(int num)
+{
+    int is_prime = 1;
+    int sqrt_num = sqrt(num);
+    for (int i = 2; i <= sqrt_num; i++)
+    {
+        if (num % i == 0)
+        {
+            printf("\nNot prime.\n");
+            is_prime = 0;
+            break;
+        }
+    }
+    if (is_prime)
+    {
+        printf("\nPrime.\n");
+    }
+}
+
+void odd_or_even(int num)
+{
+    if (num % 2 == 0)
+        printf("\nEven.\n");
+    else
+        printf("\nOdd.\n");
+}
+
 int main()
 {
-    // bool run_program = true;
+    bool run_program = true;
+    while (run_program)
+    {
+        int number, choice;
+        printf("\nEnter 1 for factorial.\n");
+        printf("Enter 2 for prime.\n");
+        printf("Enter 3 for odd/even.\n");
+        printf("Enter 4 to exit.\n");
+        scanf("%d", &choice);
 
-    // Factorial
-    int number;
-    printf("Enter a number to obtain it's factorial.\n");
-    scanf("%d", &number);
-    printf("Factorial: %d\n", factorial(number));
+        switch (choice)
+        {
+        case 1:
+            // Factorial
+            printf("Enter a number to obtain it's factorial.\n");
+            scanf("%d", &number);
+            printf("\nFactorial: %d\n", factorial(number));
+
+            break;
+        case 2:
+            // Prime
+            printf("Enter a number to check for prime.\n");
+            scanf("%d", &number);
+            prime(number);
+
+            break;
+        case 3:
+            // Odd or Even
+            printf("Enter a number to check for odd/even.\n");
+            scanf("%d", &number);
+            odd_or_even(number);
+            break;
+        case 4:
+            run_program = false;
+        }
+    }
 
     return 0;
 }
