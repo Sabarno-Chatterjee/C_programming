@@ -982,8 +982,14 @@ int main()
 
         case 2:
             // Prime
-            printf("Enter a number to check for prime.\n");
+            printf("\nEnter a number to check for prime.\n");
             scanf("%d", &number);
+            while (number == 1)
+            {
+                printf("1 is neither prime nor composite.\n");
+                printf("\nEnter a number to check for prime.\n");
+                scanf("%d", &number);
+            }
             prime(number);
             break;
 
