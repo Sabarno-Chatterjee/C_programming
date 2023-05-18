@@ -913,24 +913,108 @@ greater than the largest of the three sides.*/
 3. Odd or even
 4. Exit*/
 
+// #include <stdio.h>
+// #include <math.h>
+// #include <stdbool.h>
+
+// // Function to calculate factorial
+// int factorial(int num)
+// {
+//     if (num == 0)
+//     {
+//         return 1;
+//     }
+//     else
+//     {
+//         return num * factorial(num - 1);
+//     }
+// }
+
+// // Function to check if a number is prime
+// void prime(int num)
+// {
+//     int is_prime = 1;
+//     int sqrt_num = sqrt(num);
+//     for (int i = 2; i <= sqrt_num; i++)
+//     {
+//         if (num % i == 0)
+//         {
+//             printf("\nNot prime.\n");
+//             is_prime = 0;
+//             break;
+//         }
+//     }
+//     if (is_prime)
+//     {
+//         printf("\nPrime.\n");
+//     }
+// }
+
+// // Function to check if a number is odd or even
+// void odd_or_even(int num)
+// {
+//     if (num % 2 == 0)
+//         printf("\nEven.\n");
+//     else
+//         printf("\nOdd.\n");
+// }
+
+// int main()
+// {
+//     bool run_program = true;
+//     while (run_program)
+//     {
+//         int number, choice;
+//         printf("\nEnter 1 for factorial.\n");
+//         printf("Enter 2 for prime.\n");
+//         printf("Enter 3 for odd/even.\n");
+//         printf("Enter 4 to exit.\n");
+//         scanf("%d", &choice);
+
+//         switch (choice)
+//         {
+//         case 1:
+//             // Factorial
+//             printf("Enter a number to obtain its factorial.\n");
+//             scanf("%d", &number);
+//             printf("\nFactorial: %d\n", factorial(number));
+//             break;
+
+//         case 2:
+//             // Prime
+//             printf("\nEnter a number to check for prime.\n");
+//             scanf("%d", &number);
+//             while (number == 1)
+//             {
+//                 printf("1 is neither prime nor composite.\n");
+//                 printf("\nEnter a number to check for prime.\n");
+//                 scanf("%d", &number);
+//             }
+//             prime(number);
+//             break;
+
+//         case 3:
+//             // Odd or Even
+//             printf("Enter a number to check for odd/even.\n");
+//             scanf("%d", &number);
+//             odd_or_even(number);
+//             break;
+
+//         case 4:
+//             printf("Thank you.\n");
+//             run_program = false;
+//             break;
+//         }
+//     }
+
+//     return 0;
+// }
+
+/*(a) Write a program to print all prime numbers from 1 to 300.*/
+
 #include <stdio.h>
 #include <math.h>
-#include <stdbool.h>
 
-// Function to calculate factorial
-int factorial(int num)
-{
-    if (num == 0)
-    {
-        return 1;
-    }
-    else
-    {
-        return num * factorial(num - 1);
-    }
-}
-
-// Function to check if a number is prime
 void prime(int num)
 {
     int is_prime = 1;
@@ -939,72 +1023,21 @@ void prime(int num)
     {
         if (num % i == 0)
         {
-            printf("\nNot prime.\n");
             is_prime = 0;
             break;
         }
     }
     if (is_prime)
     {
-        printf("\nPrime.\n");
+        printf("%d\n", num);
     }
-}
-
-// Function to check if a number is odd or even
-void odd_or_even(int num)
-{
-    if (num % 2 == 0)
-        printf("\nEven.\n");
-    else
-        printf("\nOdd.\n");
 }
 
 int main()
 {
-    bool run_program = true;
-    while (run_program)
+    for (int i = 1; i <= 300; i++)
     {
-        int number, choice;
-        printf("\nEnter 1 for factorial.\n");
-        printf("Enter 2 for prime.\n");
-        printf("Enter 3 for odd/even.\n");
-        printf("Enter 4 to exit.\n");
-        scanf("%d", &choice);
-
-        switch (choice)
-        {
-        case 1:
-            // Factorial
-            printf("Enter a number to obtain its factorial.\n");
-            scanf("%d", &number);
-            printf("\nFactorial: %d\n", factorial(number));
-            break;
-
-        case 2:
-            // Prime
-            printf("\nEnter a number to check for prime.\n");
-            scanf("%d", &number);
-            while (number == 1)
-            {
-                printf("1 is neither prime nor composite.\n");
-                printf("\nEnter a number to check for prime.\n");
-                scanf("%d", &number);
-            }
-            prime(number);
-            break;
-
-        case 3:
-            // Odd or Even
-            printf("Enter a number to check for odd/even.\n");
-            scanf("%d", &number);
-            odd_or_even(number);
-            break;
-
-        case 4:
-            printf("Thank you.\n");
-            run_program = false;
-            break;
-        }
+        prime(i);
     }
 
     return 0;
