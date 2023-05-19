@@ -1012,33 +1012,99 @@ greater than the largest of the three sides.*/
 
 /*(a) Write a program to print all prime numbers from 1 to 300.*/
 
-#include <stdio.h>
-#include <math.h>
+// #include <stdio.h>
+// #include <math.h>
 
-void prime(int num)
+// void prime(int num)
+// {
+//     int is_prime = 1;
+//     int sqrt_num = sqrt(num);
+//     for (int i = 2; i <= sqrt_num; i++)
+//     {
+//         if (num % i == 0)
+//         {
+//             is_prime = 0;
+//             break;
+//         }
+//     }
+//     if (is_prime)
+//     {
+//         printf("%d\n", num);
+//     }
+// }
+
+// int main()
+// {
+//     for (int i = 1; i <= 300; i++)
+//     {
+//         prime(i);
+//     }
+
+//     return 0;
+// }
+
+/*A university has the following rules for a student to qualify
+for a degree with A as the main subject and B as the
+subsidiary subject:
+(a) He should get 55 percent or more in A and 45 percent or
+more in B.
+(b) If he gets than 55 percent in A he should get 55 percent or
+more in B. However, he should get at least 45 percent in
+A.
+(c) If he gets less than 45 percent in B and 65 percent or more
+in A he is allowed to reappear in an examination in B to
+qualify.
+(d) In all other cases he is declared to have failed.
+Write a program to receive marks in A and B and Output
+whether the student has passed, failed or is allowed to
+reappear in B.
+
+#include <stdio.h>
+
+void degree(int a, int b)
 {
-    int is_prime = 1;
-    int sqrt_num = sqrt(num);
-    for (int i = 2; i <= sqrt_num; i++)
+}
+
+int main()
+{
+    int a, b;
+    printf("Enter your percentages.\n");
+    scanf("%d%d", &a, &b);
+    degree(a, b);
+
+    return 0;
+}
+*/
+
+/*Using conditional operators determine:
+(1) Whether the character entered through the keyboard is a
+lower case alphabet or not.
+(2) Whether a character entered through the keyboard is a
+special symbol or not.*/
+
+#include <stdio.h>
+
+void check(char c)
+{
+    if (c >= 97 && c <= 122)
     {
-        if (num % i == 0)
-        {
-            is_prime = 0;
-            break;
-        }
+        printf("Lower case.\n");
     }
-    if (is_prime)
+    else if (c >= 65 && c <= 90)
     {
-        printf("%d\n", num);
+        printf("Upper case.\n");
+    }
+    else
+    {
+        printf("Special symbol.\n");
     }
 }
 
 int main()
 {
-    for (int i = 1; i <= 300; i++)
-    {
-        prime(i);
-    }
+    char c;
+    scanf("%c", &c);
+    check(c);
 
     return 0;
 }
