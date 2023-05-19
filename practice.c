@@ -1082,29 +1082,63 @@ lower case alphabet or not.
 (2) Whether a character entered through the keyboard is a
 special symbol or not.*/
 
-#include <stdio.h>
+// #include <stdio.h>
 
-void check(char c)
+// void check(char c)
+// {
+//     if (c >= 97 && c <= 122)
+//     {
+//         printf("Lower case.\n");
+//     }
+//     else if (c >= 65 && c <= 90)
+//     {
+//         printf("Upper case.\n");
+//     }
+//     else
+//     {
+//         printf("Special symbol.\n");
+//     }
+// }
+
+// int main()
+// {
+//     char c;
+//     scanf("%c", &c);
+//     check(c);
+
+//     return 0;
+// }
+
+/*Write a program to print out all Armstrong numbers between
+1 and 500. If sum of cubes of each digit of the number is
+equal to the number itself, then the number is called an
+Armstrong number. For example, 153 = ( 1 * 1 * 1 ) + ( 5 * 5
+* 5 ) + ( 3 * 3 * 3 )*/
+
+#include <stdio.h>
+#include <math.h>
+void armstrong()
 {
-    if (c >= 97 && c <= 122)
+
+    for (int i = 1; i <= 300; i++)
     {
-        printf("Lower case.\n");
-    }
-    else if (c >= 65 && c <= 90)
-    {
-        printf("Upper case.\n");
-    }
-    else
-    {
-        printf("Special symbol.\n");
+        int digit, sum = 0, original_num, num = i;
+        original_num = num;
+        while (num)
+        {
+            digit = pow(num % 10, 3);
+            sum += digit;
+            num = num / 10;
+            // printf("%d\n", digit);
+        }
+
+        // printf("%d\n", sum);
+        if (sum == original_num)
+            printf("%d\n", original_num);
     }
 }
-
 int main()
 {
-    char c;
-    scanf("%c", &c);
-    check(c);
-
+    armstrong();
     return 0;
 }
