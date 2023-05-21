@@ -1115,30 +1115,49 @@ equal to the number itself, then the number is called an
 Armstrong number. For example, 153 = ( 1 * 1 * 1 ) + ( 5 * 5
 * 5 ) + ( 3 * 3 * 3 )*/
 
+// #include <stdio.h>
+// #include <math.h>
+// void armstrong()
+// {
+
+//     for (int i = 1; i <= 300; i++)
+//     {
+//         int digit, sum = 0, original_num, num = i;
+//         original_num = num;
+//         while (num)
+//         {
+//             digit = pow(num % 10, 3);
+//             sum += digit;
+//             num = num / 10;
+//             // printf("%d\n", digit);
+//         }
+
+//         // printf("%d\n", sum);
+//         if (sum == original_num)
+//             printf("%d\n", original_num);
+//     }
+// }
+// int main()
+// {
+//     armstrong();
+//     return 0;
+// }
+
+/*Area and perimeter of a circle using pointers */
 #include <stdio.h>
-#include <math.h>
-void armstrong()
+
+float calc(float r, float *a, float *p)
 {
-
-    for (int i = 1; i <= 300; i++)
-    {
-        int digit, sum = 0, original_num, num = i;
-        original_num = num;
-        while (num)
-        {
-            digit = pow(num % 10, 3);
-            sum += digit;
-            num = num / 10;
-            // printf("%d\n", digit);
-        }
-
-        // printf("%d\n", sum);
-        if (sum == original_num)
-            printf("%d\n", original_num);
-    }
+    float PI = 3.14;
+    *a = PI * r * r;
+    *p = 2 * PI * r;
 }
 int main()
 {
-    armstrong();
+    float radius, perimeter, area;
+    printf("Enter the radius.\n");
+    scanf("%f", &radius);
+    calc(radius, &area, &perimeter);
+    printf("Area: %.2f and Perimeter: %.2f\n", area, perimeter);
     return 0;
 }
