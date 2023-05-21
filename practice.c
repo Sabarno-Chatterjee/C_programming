@@ -1144,20 +1144,42 @@ Armstrong number. For example, 153 = ( 1 * 1 * 1 ) + ( 5 * 5
 // }
 
 /*Area and perimeter of a circle using pointers */
+// #include <stdio.h>
+
+// float calc(float r, float *a, float *p)
+// {
+//     float PI = 3.14;
+//     *a = PI * r * r;
+//     *p = 2 * PI * r;
+// }
+// int main()
+// {
+//     float radius, perimeter, area;
+//     printf("Enter the radius.\n");
+//     scanf("%f", &radius);
+//     calc(radius, &area, &perimeter);
+//     printf("Area: %.2f and Perimeter: %.2f\n", area, perimeter);
+//     return 0;
+// }
+
+/*non-recursive function for calculating the factorial
+value of an integer*/
+
 #include <stdio.h>
 
-float calc(float r, float *a, float *p)
+int factorial(int num, int *f)
 {
-    float PI = 3.14;
-    *a = PI * r * r;
-    *p = 2 * PI * r;
+    for (int i = 1; i <= num; i++)
+    {
+        *f *= i;
+    }
 }
 int main()
 {
-    float radius, perimeter, area;
-    printf("Enter the radius.\n");
-    scanf("%f", &radius);
-    calc(radius, &area, &perimeter);
-    printf("Area: %.2f and Perimeter: %.2f\n", area, perimeter);
+    int number, f = 1;
+    scanf("%d", &number);
+    factorial(number, &f);
+    printf("Factorial: %d\n", f);
+
     return 0;
 }
