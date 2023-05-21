@@ -1161,25 +1161,3 @@ Armstrong number. For example, 153 = ( 1 * 1 * 1 ) + ( 5 * 5
 //     printf("Area: %.2f and Perimeter: %.2f\n", area, perimeter);
 //     return 0;
 // }
-
-/*non-recursive function for calculating the factorial
-value of an integer*/
-
-#include <stdio.h>
-
-int factorial(int num, int *f)
-{
-    for (int i = 1; i <= num; i++)
-    {
-        *f *= i;
-    }
-}
-int main()
-{
-    int number, f = 1;
-    scanf("%d", &number);
-    factorial(number, &f);
-    printf("Factorial: %d\n", f);
-
-    return 0;
-}
