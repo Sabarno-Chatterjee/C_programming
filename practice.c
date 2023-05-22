@@ -1165,19 +1165,42 @@ Armstrong number. For example, 153 = ( 1 * 1 * 1 ) + ( 5 * 5
 /*Write a function power ( a, b ), to calculate the value of a
 raised to b.*/
 
+// #include <stdio.h>
+// #include <math.h>
+// void power(int a, int b, int *result)
+// {
+//     *result = pow(a, b);
+// }
+
+// int main()
+// {
+//     int a, b, result;
+//     printf("Enter a and b.\n");
+//     scanf("%d%d", &a, &b);
+//     power(a, b, &result);
+//     printf("%d ^ %d = %d \n", a, b, result);
+//     return 0;
+// }
+
+/*Write a function which receives a float and an int from
+main( ), finds the product of these two and returns the product
+which is printed through main( ).*/
+
 #include <stdio.h>
-#include <math.h>
-int power(int *a, int *b, int *result)
+
+void product(float a, int b, float *p)
+
 {
-    *result = pow(*a, *b);
+    *p = a * b;
 }
 
 int main()
 {
-    int a, b, result;
-    printf("Enter a and b.\n");
-    scanf("%d%d", &a, &b);
-    power(&a, &b, &result);
-    printf("%d ^ %d = %d \n", a, b, result);
+    float a, p;
+    int b;
+    printf("Enter the values.\n");
+    scanf("%f%d", &a, &b);
+    product(a, b, &p);
+    printf("%.2f * %d = %.2f\n", a, b, p);
     return 0;
 }
