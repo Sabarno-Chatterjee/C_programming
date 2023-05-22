@@ -1161,3 +1161,23 @@ Armstrong number. For example, 153 = ( 1 * 1 * 1 ) + ( 5 * 5
 //     printf("Area: %.2f and Perimeter: %.2f\n", area, perimeter);
 //     return 0;
 // }
+
+/*Write a function power ( a, b ), to calculate the value of a
+raised to b.*/
+
+#include <stdio.h>
+#include <math.h>
+int power(int *a, int *b, int *result)
+{
+    *result = pow(*a, *b);
+}
+
+int main()
+{
+    int a, b, result;
+    printf("Enter a and b.\n");
+    scanf("%d%d", &a, &b);
+    power(&a, &b, &result);
+    printf("%d ^ %d = %d \n", a, b, result);
+    return 0;
+}
