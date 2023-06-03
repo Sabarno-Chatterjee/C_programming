@@ -1217,12 +1217,19 @@ int main()
     printf("Enter N.\n");
     scanf("%d", &num);
 
-    for (int i = 0; i < num; i++)
+    // for (int i = 0; i < num; i++)
+    // {
+    //     sum += x;
+    //     x += i + 1;
+    // }
+
+    int i = 0;
+    do
     {
         sum += x;
         x += i + 1;
-    }
-
+        i++;
+    } while (i < num);
     printf("%d\n", sum);
 
     return 0;
