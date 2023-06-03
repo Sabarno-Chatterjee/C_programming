@@ -1186,21 +1186,44 @@ raised to b.*/
 main( ), finds the product of these two and returns the product
 which is printed through main( ).*/
 
+// #include <stdio.h>
+
+// void product(float a, int b, float *p)
+
+// {
+//     *p = a * b;
+// }
+
+// int main()
+// {
+//     float a, p;
+//     int b;
+//     printf("Enter the values.\n");
+//     scanf("%f%d", &a, &b);
+//     product(a, b, &p);
+//     printf("%.2f * %d = %.2f\n", a, b, p);
+//     return 0;
+// }
+
+/*Write loops that calculate the sum of the given series: 1+2+4+7+11+16+______ with:
+(i) do while loop,
+(ii)for loop.*/
+
 #include <stdio.h>
-
-void product(float a, int b, float *p)
-
-{
-    *p = a * b;
-}
 
 int main()
 {
-    float a, p;
-    int b;
-    printf("Enter the values.\n");
-    scanf("%f%d", &a, &b);
-    product(a, b, &p);
-    printf("%.2f * %d = %.2f\n", a, b, p);
+    int num, sum = 0, x = 1;
+    printf("Enter N.\n");
+    scanf("%d", &num);
+
+    for (int i = 0; i < num; i++)
+    {
+        sum += x;
+        x += i + 1;
+    }
+
+    printf("%d\n", sum);
+
     return 0;
 }
