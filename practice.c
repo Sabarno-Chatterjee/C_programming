@@ -1459,6 +1459,149 @@ I N F I N I T Y*/
 //     pattern();
 //     return 0;
 // }
+
+/*Write a program to display the following
+pattern : 6
+1 2 3 4
+  5 6 7
+    8 9*/
+
+// Using macros
+// #include <stdio.h>
+
+// #define PATTERN          \
+//     printf("1 2 3 4\n"); \
+//     printf("  5 6 7\n"); \
+//     printf("    8 9\n");
+
+// int main()
+// {
+//     PATTERN;
+//     return 0;
+// }
+
+/* Write a program segment to generate the
+following pattern using "for" and
+"while loop"
+*
+* *
+* * *
+* * * *
+*/
+
+// for loop
+//  #include <stdio.h>
+
+// void pattern()
+// {
+//     for (int i = 0; i < 4; i++)
+//     {
+//         for (int j = 0; j <= i; j++)
+//         {
+//             printf("*");
+//         }
+//         printf("\n");
+//     }
+// }
+
+// int main()
+// {
+//     pattern();
+//     return 0;
+// }
+
+// while loop
+
+// #include <stdio.h>
+// void pattern()
+// {
+//     int i = 0;
+
+//     while (i < 4)
+//     {
+//         int j = 0;
+//         while (j <= i)
+//         {
+//             printf("* ");
+//             j++;
+//         }
+//         printf("\n");
+//         i++;
+//     }
+// }
+// int main()
+// {
+//     pattern();
+//     return 0;
+// }
+
+/*? Write a function in C to
+convert lower case letters to upper case
+letters in a given string without using
+strupp ?*/
+
+// #include <stdio.h>
+// int main()
+// {
+
+//     char str[] = "pascal";
+//     int length = sizeof(str) / sizeof(str[0]) - 1;
+//     for (int i = 0; i <= length; i++)
+//     {
+//         str[i] = str[i] - 32;
+//     }
+//     printf("%s\n", str);
+//     return 0;
+// }
+
+// or
+
+// #include <stdio.h>
+
+// void to_uppercase(char str[])
+// {
+//     int i = 0;
+//     while (str[i] != '\0')
+//     {
+//         if (str[i] >= 'a' && str[i] <= 'z')
+//         {
+//             str[i] = str[i] - ('a' - 'A');
+//         }
+//         i++;
+//     }
+// }
+
+// int main()
+// {
+//     char str[] = "charles babbage(1791)";
+//     to_uppercase(str);
+//     printf("%s\n", str);
+//     return 0;
+// }
+
+// upper to lower.
+
+#include <stdio.h>
+void to_lower(char str[])
+{
+    int i = 0;
+    while (str[i] != '\0')
+    {
+        if (str[i] >= 'A' && str[i] <= 'Z')
+        {
+            str[i] = str[i] + ('a' - 'A');
+        }
+        i++;
+    }
+}
+
+int main()
+{
+    char str[] = "ABC@GMAIL.COM";
+    to_lower(str);
+    printf("%s\n", str);
+    return 0;
+}
 /*a) Using pointers, write a program in C to
 count the no. of occurrence of each
 character in a given string.
