@@ -1209,28 +1209,261 @@ which is printed through main( ).*/
 (i) do while loop,
 (ii)for loop.*/
 
-#include <stdio.h>
+// #include <stdio.h>
 
-int main()
-{
-    int num, sum = 0, x = 1;
-    printf("Enter N.\n");
-    scanf("%d", &num);
+// int main()
+// {
+//     int num, sum = 0, x = 1;
+//     printf("Enter N.\n");
+//     scanf("%d", &num);
 
-    // for (int i = 0; i < num; i++)
-    // {
-    //     sum += x;
-    //     x += i + 1;
-    // }
+//     // for (int i = 0; i < num; i++)
+//     // {
+//     //     sum += x;
+//     //     x += i + 1;
+//     // }
 
-    int i = 0;
-    do
-    {
-        sum += x;
-        x += i + 1;
-        i++;
-    } while (i < num);
-    printf("%d\n", sum);
+//     int i = 0;
+//     do
+//     {
+//         sum += x;
+//         x += i + 1;
+//         i++;
+//     } while (i < num);
+//     printf("%d\n", sum);
 
-    return 0;
-}
+//     return 0;
+// }
+
+// int array[] = {7, 69, 4, 16, 5, 12, 57, 9, 2, 19, 6, 1, 20, 3, 11, 4, 8, 67,87,34,23,11,56,32};
+
+/*Write a program to find the maximum
+marks, lowest marks and average marks among the given marks of
+10 students.*/
+// #include <stdio.h>
+// void sort(int marks[], int size)
+// {
+//     int temp;
+//     for (int i = 0; i < size - 1; i++)
+//     {
+//         for (int j = 0; j < size - 1 - i; j++)
+//         {
+//             if (marks[i] > marks[i + 1])
+//             {
+//                 temp = marks[i];
+//                 marks[i] = marks[i + 1];
+//                 marks[i + 1] = temp;
+//             }
+//         }
+//     }
+// }
+// int average(int marks[], int size)
+// {
+//     int sum = 0;
+//     for (int i = 0; i < size; i++)
+//     {
+//         sum += marks[i];
+//     }
+//     return sum / size;
+// }
+// int main()
+// {
+//     int marks[10] = {67, 34, 26, 89, 90, 37, 58, 57, 95, 39};
+//     int size = sizeof(marks) / sizeof(marks[0]);
+//     sort(marks, size);
+//     printf("The highest marks is : %d\n", marks[size - 1]);
+//     printf("The lowest marks is : %d\n", marks[0]);
+//     printf("The average marks is : %d\n", average(marks, size));
+//     return 0;
+// }
+
+/*Write a macro to display string "Cobol" in
+the following pattern :
+C
+C O
+C O B
+C O B O
+C O B O L
+C O B O L
+C O B O
+C O B
+CO
+C*/
+// #include <stdio.h>
+
+// #define DESIGN_PATTERN     \
+//     printf("C\n");         \
+//     printf("C O\n");       \
+//     printf("C O B\n");     \
+//     printf("C O B O\n");   \
+//     printf("C O B O L\n"); \
+//     printf("C O B O L\n"); \
+//     printf("C O B O \n");  \
+//     printf("C O B \n");    \
+//     printf("C O \n");      \
+//     printf("C \n");
+
+// int main()
+// {
+//     DESIGN_PATTERN;
+//     return 0;
+// }
+
+/*Write a program to generate the following
+pattern :
+1
+1 2
+1 2 3
+1 2 3 4
+1 2 3 4 5*/
+
+// Using macro
+
+// #include <stdio.h>
+
+// #define PATTERN          \
+//     printf("1\n");       \
+//     printf("1 2\n");     \
+//     printf("1 2 3\n");   \
+//     printf("1 2 3 4\n"); \
+//     printf("1 2 3 4 5\n");
+
+// int main()
+// {
+//     PATTERN;
+//     return 0;
+// }
+
+// #include <stdio.h>
+
+// void pattern()
+// {
+//     int n = 5;
+//     for (int i = 1; i <= n; i++)
+//     {
+//         for (int j = 1; j <= i; j++)
+//         {
+//             printf("%d ", j);
+//         }
+//         printf("\n");
+//     }
+// }
+
+// int main()
+// {
+//     pattern();
+//     return 0;
+// }
+
+/*Explain the use of break and continue
+statements with the help of a program.*/
+
+// #include <stdio.h>
+// int main()
+// {
+//     for (int i = 1; i <= 15; i++)
+//     {
+//         if (i % 2 != 0)
+//             continue;
+//         else
+//         {
+//             printf("%d\n", i);
+//         }
+//     }
+//     return 0;
+// }
+
+/*Write a C program to display the following
+pattern using “for” loop : 10
+5
+5 4
+5 4 3
+5 4 3 2
+5 4 3 2 1*/
+
+// using macros
+// #include <stdio.h>
+
+// #define DESIGN            \
+//     printf("5\n");        \
+//     printf("5 4\n");      \
+//     printf("5 4 3\n");    \
+//     printf("5 4 3 2 \n"); \
+//     printf("5 4 3 2 1\n");
+
+// int main()
+// {
+//     DESIGN;
+//     return 0;
+// }
+
+// Using for-loop
+// #include <stdio.h>
+// void design()
+// {
+
+//     for (int i = 5; i >= 1; i--)
+//     {
+//         for (int j = 5; j >= i; j--)
+//         {
+//             printf("%d ", j);
+//         }
+//         printf("\n");
+//     }
+// }
+// int main()
+// {
+//     design();
+//     return 0;
+// }
+
+/*Write a program to display string
+‘INFINITY’ in the following pattern (using
+‘‘LOOP’’ control statement) :
+I
+I N
+I N F
+I N F I
+I N F I N
+I N F I N I
+I N F I N I T
+I N F I N I T Y*/
+
+// #include <stdio.h>
+// void pattern()
+// {
+//     char str[] = "INFINITY";
+//     int length = sizeof(str) / sizeof(str[0]) - 1;
+//     // printf("%d\n", length);
+//     for (int i = length; i >= 0; i--)
+//     {
+//         for (int j = 0; j <= i; j++)
+//         {
+//             printf("%c ", str[j]);
+//         }
+//         printf("\n");
+//     }
+//     // Secondary pattern
+//     // for (int i = 1; i <= length; i++)
+//     // {
+//     //     for (int j = 0; j <= i; j++)
+//     //     {
+//     //         printf("%c ", str[j]);
+//     //     }
+//     //     printf("\n");
+//     // }
+// }
+
+// int main()
+// {
+//     pattern();
+//     return 0;
+// }
+/*a) Using pointers, write a program in C to
+count the no. of occurrence of each
+character in a given string.
+Sample 1/P : ARRANGE
+0/P :
+A — 2 times G — 1 time
+R — 2 times E — 1 time
+N — 1 time*/
