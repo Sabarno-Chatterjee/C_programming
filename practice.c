@@ -1581,27 +1581,28 @@ strupp ?*/
 
 // upper to lower.
 
-#include <stdio.h>
-void to_lower(char str[])
-{
-    int i = 0;
-    while (str[i] != '\0')
-    {
-        if (str[i] >= 'A' && str[i] <= 'Z')
-        {
-            str[i] = str[i] + ('a' - 'A');
-        }
-        i++;
-    }
-}
+// #include <stdio.h>
+// void to_lower(char str[])
+// {
+//     int i = 0;
+//     while (str[i] != '\0')
+//     {
+//         if (str[i] >= 'A' && str[i] <= 'Z')
+//         {
+//             str[i] = str[i] + ('a' - 'A');
+//         }
+//         i++;
+//     }
+// }
 
-int main()
-{
-    char str[] = "ABC@GMAIL.COM";
-    to_lower(str);
-    printf("%s\n", str);
-    return 0;
-}
+// int main()
+// {
+//     char str[] = "ABC@GMAIL.COM";
+//     to_lower(str);
+//     printf("%s\n", str);
+//     return 0;
+// }
+
 /*a) Using pointers, write a program in C to
 count the no. of occurrence of each
 character in a given string.
@@ -1610,3 +1611,451 @@ Sample 1/P : ARRANGE
 A — 2 times G — 1 time
 R — 2 times E — 1 time
 N — 1 time*/
+
+/*Write a C program to find the sum of
+diagonal elements of a 3  3 matrix.*/
+// #include <stdio.h>
+// int main()
+// {
+//     int matrix[3][3];
+//     int i, j, sum = 0;
+//     printf("Enter the elements of the matrix\n");
+//     for (i = 0; i < 3; i++)
+//     {
+//         for (j = 0; j < 3; j++)
+//         {
+//             scanf("%d", &matrix[i][j]);
+//         }
+//     }
+//     for (i = 0; i < 3; i++)
+//     {
+//         sum += matrix[i][i];
+//     }
+//     printf("Sum= %d\n", sum);
+//     return 0;
+// }
+
+// Sum of both the diagonals.
+// #include <stdio.h>
+// int main()
+// {
+//     int matrix[3][3];
+//     int i, j, sum = 0;
+//     for (i = 0; i < 3; i++)
+//     {
+//         for (j = 0; j < 3; j++)
+//         {
+//             scanf("%d", &matrix[i][j]);
+//         }
+//     }
+//     for (i = 0; i < 3; i++)
+//     {
+//         sum += matrix[i][i];
+//         sum += matrix[i][2 - i];
+//     }
+
+//     printf("Sum of both the diagonals are: %d\n", sum);
+//     return 0;
+// }
+
+/*Write a simple menu program, using
+switch statement to select an operator on
+two 3 × 3 matrices : 10
+(i) Addition of two matrices
+(ii) Subtraction of 2 matrices*/
+
+// #include <stdio.h>
+// void add(int matrix1[3][3], int matrix2[3][3])
+// {
+//     int result[3][3];
+//     for (int i = 0; i < 3; i++)
+//     {
+//         for (int j = 0; j < 3; j++)
+//         {
+//             result[i][j] = matrix1[i][j] + matrix2[i][j];
+//         }
+//     }
+//     for (int i = 0; i < 3; i++)
+//     {
+//         for (int j = 0; j < 3; j++)
+//         {
+//             printf("Result: %d", result[i][j]);
+//         }
+//     }
+// }
+
+// void subtract(int matrix1[3][3], int matrix2[3][3])
+// {
+//     int result[3][3];
+//     for (int i = 0; i < 3; i++)
+//     {
+//         for (int j = 0; j < 3; j++)
+//         {
+//             result[i][j] = matrix1[i][j] - matrix2[i][j];
+//         }
+//     }
+//     for (int i = 0; i < 3; i++)
+//     {
+//         for (int j = 0; j < 3; j++)
+//         {
+//             printf("Result: %d", result[i][j]);
+//         }
+//     }
+// }
+// int main()
+// {
+//     int matrix1[3][3];
+//     int matrix2[3][3];
+//     char choice;
+//     printf("Enter the elements for matrix1. \n");
+//     for (int i = 0; i < 3; i++)
+//     {
+//         for (int j = 0; j < 3; j++)
+//         {
+//             scanf("%d", matrix1[i][j]);
+//         }
+//     }
+//     printf("Enter the elements for matrix2.\n");
+//     for (int i = 0; i < 3; i++)
+//     {
+//         for (int j = 0; j < 3; j++)
+//         {
+//             scanf("%d", matrix2[i][j]);
+//         }
+//     }
+
+//     printf("Enter + or -\n");
+//     scanf("%c", &choice);
+
+//     switch (choice)
+//     {
+//     case '+':
+//         add(matrix1, matrix2);
+//         break;
+//     case '-':
+//         subtract(matrix1, matrix2);
+//         break;
+
+//     default:
+//         printf("Enter a valid choice.\n");
+//         break;
+//     }
+// }
+
+/* Write a program to :
+(i) Find the length of a string.
+(ii) Print the reverse of the string.*/
+
+/*Write a recursive function in C to generate
+a Fibonacci series.*/
+
+/*
+Write an interactive C program to perform
+the following operation on a 3 x 3 matrix
+with appropriate validation checks :
+C = A * B
+*/
+
+/*
+List the arithmetic, logical and relational
+operators in C. When a, b, c and d are
+integers and values of a, b and c are 8, 6
+and 4 respectively. Find the value of d, 8
+if d = a + (b — c)* a / c
+*/
+
+/*Using file handling concept, write a C
+program to read a file and count the no. of
+lines in*/
+
+/*Define an array. How are arrays declared
+and initialized ? Write a C program tO add
+two metrices A and B of size 3 x*/
+
+/*Write a C program using array of pointers
+to strings to read name of your five friends
+and display them.*/
+
+/*Write a C program to create two matrices
+A and B of size 3 x 3 and find
+A x B.*/
+
+/*Write a C program to create a macro to
+evaluate :
+f(x)=3x^3 + 2x^2 + x
+*/
+
+/*Write a macro to evaluate fix) = 2x2 + 3x + 5.*/
+
+/*Write a C program to add two matrices of
+size 3 x 3.*/
+
+/*Write a C program to copy the contents of a
+file into a newly created file (Use file
+handling concept).*/
+
+/*Write a C program using recursive function
+to find the factorial of a given number.*/
+
+/*Write a program to calculate an air ticket
+fare after discount, given the following
+conditions :
+If passenger is
+(i) below 14 years then there is 50%
+discount on fare.
+(ii) above 50 years, 20% discount.
+(iii) above 14 and below 50 then 10%
+discount only.*/
+
+/*Write a program to copy the file contents of
+filel to another file, filet. Write the
+complete program using files concept of
+C programming.*/
+
+/*Using structures, write a C program to
+calculate the Gross salary and Net salary,
+if Basic, Grade Pay, TA and DA are given.
+Deductions like Loans, Tax, LIC, etc. need
+to be considered, if any.*/
+
+/*Write a program to test whether the given
+string is a number palindrome or not.*/
+
+/* Differentiate between a macro and a
+function. To illustrate, write a macro and a
+function to swap values of 2 variables x
+and y. */
+
+/*Write a program to search an element in a
+given list of elements using linear search.*/
+
+/*Write a program in "C", using structures, to
+find the sum of the Assignment and Term
+End Exam marks (for IGNOU MCA or BCA
+first semester courses) for 5 students.*/
+
+/*Using pointers, write a C program to test
+whether the given string is a palindrome or
+not.*/
+
+/* Write a C program to read formatted data
+(Act_No,- CName, Balance) from a file and
+print the information of all the customers
+whose balance is equal to and more than
+1,000. */
+
+/*Write a C program to compute the age of a
+person by taking the current date and the
+date_of birth as inputs.*/
+
+/*Design a flow chart and write an algorithm
+to calculate the sum of all the digits of a
+4-digit number.*/
+
+/*(d) Write macro definitions for the following : 10
+(i) To find the AREA of a circle (pi x r2
+where pi = 3.14)
+(ii) To find the PERIMETER of a
+rectangle (2 length + 2 breadth)
+(iii) To find the AREA of a rectangle
+(length x breadth)
+(iv) To find the PERIMETER of a square
+(4 x side)
+(v) To find the AREA of a square
+(side x side)*/
+
+/*Write a C program to implement STRING
+COPY operation that copies a string ‘‘str1’’
+to another string ‘‘str2’’ without using
+library function.*/
+
+/*Write a C program to mantain a record of
+‘‘n’’ student details using an array of
+structures with structure-variables
+(Rollnumber, Name, Marks1, Marks2,
+Marks3, Marks4 and Grade). Define each
+field of the structure with appropriate
+datatype. Print the marks of the student of
+given Rollnumber as input.*/
+
+/*Write a C program to create a file of
+numbers given by the user and copy odd
+numbers to odd.dat file and even numbers
+to even.dat file.*/
+
+// #include <stdio.h>
+// int main()
+// {
+
+//     // FILE *pF = fopen("test.txt", "w");
+//     // fprintf(pF, "Babbage.");
+//     // fclose(pF);
+
+//     if (remove("test.txt") == 0)
+//         printf("File deleted successfully.\n");
+//     else
+//         printf("File does not exist.\n");
+//     return 0;
+// }
+
+/*Write a program using File-Handling to
+count the no. of characters in a given .dat
+file.*/
+
+/*Write an algorithm and draw the
+corresponding flowchart to find the GCD
+(Greatest Common Divisor) of 2 given
+integers.*/
+
+/*Write a program using file-handling
+concept, to read and count the no. of
+characters in a .dot file.*/
+
+/*Write a program using pointers, to swap
+the values of 2 variables.*/
+
+// #include <stdio.h>
+// void swap(int *pA, int *pB)
+// {
+//     int temp = *pA;
+//     *pA = *pB;
+//     *pB = temp;
+// }
+
+// int main()
+// {
+//     int a, b, *pA, *pB;
+//     pA = &a;
+//     pB = &b;
+//     printf("Enter a & b.\n");
+//     scanf("%d%d", &a, &b);
+//     printf("a = %d and b = %d\n", a, b);
+//     swap(pA, pB);
+//     printf("a = %d and b = %d\n", a, b);
+//     return 0;
+// }
+
+// COBOL
+
+// #include <stdio.h>
+
+// #define PATTERN                      \
+//     for (int i = 0; i < 5; i++)      \
+//     {                                \
+//         for (int j = 0; j <= i; j++) \
+//         {                            \
+//             printf("%c ", str[j]);   \
+//         }                            \
+//         printf("\n");                \
+//     }                                \
+//     for (int i = 4; i >= 0; i--)     \
+//     {                                \
+//         for (int j = 0; j <= i; j++) \
+//         {                            \
+//             printf("%c ", str[j]);   \
+//         }                            \
+//         printf("\n");                \
+//     }
+
+// int main()
+// {
+//     char str[] = "COBOL";
+//     PATTERN;
+//     return 0;
+// }
+
+// Matrix multiplication.
+
+// #include <stdio.h>
+
+// #define SIZE 3
+
+// void matrixMultiply(int matrix1[][SIZE], int matrix2[][SIZE], int result[][SIZE])
+// {
+//     int i, j, k;
+
+//     // Perform matrix multiplication
+//     for (i = 0; i < SIZE; i++)
+//     {
+//         for (j = 0; j < SIZE; j++)
+//         {
+//             result[i][j] = 0;
+//             for (k = 0; k < SIZE; k++)
+//             {
+//                 result[i][j] += matrix1[i][k] * matrix2[k][j];
+//             }
+//         }
+//     }
+// }
+
+// void matrixMultiply(int matrix1[][SIZE], int matrix2[][SIZE], int result[][SIZE])
+// {
+//     int i, j, k;
+//     for (i = 0; i < SIZE; i++)
+//     {
+//         for (j = 0; j < SIZE; j++)
+//         {
+//             result[i][j] = 0;
+//             for (k = 0; k < SIZE; k++)
+//             {
+//                 result[i][j] += matrix1[i][k] * matrix2[k][j];
+//             }
+//         }
+//     }
+// }
+
+// void displayMatrix(int matrix[][SIZE])
+// {
+//     int i, j;
+
+//     for (i = 0; i < SIZE; i++)
+//     {
+//         for (j = 0; j < SIZE; j++)
+//         {
+//             printf("%d ", matrix[i][j]);
+//         }
+//         printf("\n");
+//     }
+// }
+
+// int main()
+// {
+//     int matrix1[SIZE][SIZE];
+//     int matrix2[SIZE][SIZE];
+//     int result[SIZE][SIZE];
+//     int i, j;
+
+//     // Input matrix1
+//     printf("Enter elements of matrix1:\n");
+//     for (i = 0; i < SIZE; i++)
+//     {
+//         for (j = 0; j < SIZE; j++)
+//         {
+//             scanf("%d", &matrix1[i][j]);
+//         }
+//     }
+
+//     // Input matrix2
+//     printf("Enter elements of matrix2:\n");
+//     for (i = 0; i < SIZE; i++)
+//     {
+//         for (j = 0; j < SIZE; j++)
+//         {
+//             scanf("%d", &matrix2[i][j]);
+//         }
+//     }
+
+//     // Perform matrix multiplication
+//     matrixMultiply(matrix1, matrix2, result);
+
+//     // Display the result
+//     printf("Resultant matrix:\n");
+//     displayMatrix(result);
+
+//     return 0;
+// }
+
+// String copy
+
+#include <stdio.h>
+int main()
