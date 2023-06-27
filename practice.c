@@ -140,20 +140,81 @@ total literacy is 48. If total percentage of literate men is 35 of
 the total population, write a program to find the total number of illiterate men and women if the population of the town is
 80,000.*/
 
+// #include <stdio.h>
+
+// int main()
+// {
+//   int population = 80000;
+//   float percentage_men = 0.52;
+//   float total_literacy = 0.48;
+//   float literate_men = 0.35;
+
+//   float total_illiterate_men = (population * percentage_men) - (population * literate_men);
+//   float total_illiterate_women = population - (total_illiterate_men + (population * literate_men));
+
+//   printf("Total number of illiterate men: %.0f\n", total_illiterate_men);
+//   printf("Total number of illiterate women: %.0f\n", total_illiterate_women);
+
+//   return 0;
+// }
+
+/*If a five-digit number is input through the keyboard, write a
+program to print a new number by adding one to each of its
+digits. For example if the number that is input is 12391 then
+the output should be displayed as 23402.*/
+// #include <stdio.h>
+
+// int main()
+// {
+//   int num, digit, new_num = 0, multiplier = 1;
+
+//   printf("Enter a five-digit number: ");
+//   scanf("%d", &num);
+
+//   while (num != 0)
+//   {
+//     digit = (num % 10) + 1;
+//     if (digit > 9)
+//     {
+//       digit = 0; // If the digit becomes 10 after adding 1, reset it to 0
+//     }
+
+//     new_num = (digit * multiplier) + new_num;
+//     multiplier *= 10;
+//     num /= 10;
+//   }
+
+//   printf("The new number is: %05d\n", new_num);
+
+//   return 0;
+// }
+
+/*Any year is input through the keyboard. Write a program to
+determine whether the year is a leap year or not.*/
+
 #include <stdio.h>
 
+void leap_year(int year)
+{
+  if (year % 4 == 0)
+  {
+    if (year % 100 == 0)
+    {
+      if (year % 400 == 0)
+        printf("Leap year.\n");
+      else
+        printf("Not leap year.\n");
+    }
+    else
+      printf("Leap year.\n");
+  }
+  else
+    printf("Not leap year.\n");
+}
 int main()
 {
-  int population = 80000;
-  float percentage_men = 0.52;
-  float total_literacy = 0.48;
-  float literate_men = 0.35;
-
-  float total_illiterate_men = (population * percentage_men) - (population * literate_men);
-  float total_illiterate_women = population - (total_illiterate_men + (population * literate_men));
-
-  printf("Total number of illiterate men: %.0f\n", total_illiterate_men);
-  printf("Total number of illiterate women: %.0f\n", total_illiterate_women);
-
+  int year;
+  scanf("%d", &year);
+  leap_year(year);
   return 0;
 }
