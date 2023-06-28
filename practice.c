@@ -265,33 +265,84 @@ program to check if all the three points fall on one straight line.*/
 program to determine whether the character entered is a
 capital letter, a small case letter, a digit or a special symbol.*/
 
+// #include <stdio.h>
+// void check(char ch)
+// {
+//   if ((ch >= 123 && ch <= 127) || (ch >= 0 && ch <= 47) || (ch >= 58 && ch <= 64) || (ch >= 91 && ch <= 96))
+//     printf("Special characters.\n");
+//   else if (ch >= 48 && ch <= 57)
+//     printf("Digits.\n");
+//   else if (ch >= 97 && ch <= 122)
+//     printf("Small case.\n");
+//   else if (ch >= 65 && ch <= 90)
+//     printf("Upper case.\n");
+//   else
+//     printf("Inavalid input.\n");
+// }
+// int main()
+// {
+//   char ch;
+//   printf("Enter a character.\n");
+//   scanf("%c", &ch);
+//   check(ch);
+
+//   // Test code
+//   //  char test[10] = {'a', 'J', '1', '*', 's', 'F', ')'};
+//   //  for (int i = 0; i < 7; i++)
+//   //  {
+//   //    check(test[i]);
+//   //  }
+
+//   return 0;
+// }
+
+/*An Insurance company follows following rules to calculate
+premium.
+(1) If a person’s health is excellent and the person is between
+25 and 35 years of age and lives in a city and is a male
+then the premium is Rs. 4 per thousand and his policy
+amount cannot exceed Rs. 2 lakhs.
+(2) If a person satisfies all the above conditions except that
+the sex is female then the premium is Rs. 3 per thousand
+and her policy amount cannot exceed Rs. 1 lakh.
+(3) If a person’s health is poor and the person is between 25
+and 35 years of age and lives in a village and is a male then the premium is Rs. 6 per thousand and his policy
+cannot exceed Rs. 10,000.
+(4) In all other cases the person is not insured.
+Write a program to output whether the person should be
+insured or not, his/her premium rate and maximum amount
+for which he/she can be insured.*/
+
 #include <stdio.h>
-void check(char ch)
+#include <string.h>
+
+void insurance(char h[], char s, char l[], int age)
 {
-  if ((ch >= 123 && ch <= 127) || (ch >= 0 && ch <= 47) || (ch >= 58 && ch <= 64) || (ch >= 91 && ch <= 96))
-    printf("Special characters.\n");
-  else if (ch >= 48 && ch <= 57)
-    printf("Digits.\n");
-  else if (ch >= 97 && ch <= 122)
-    printf("Small case.\n");
-  else if (ch >= 65 && ch <= 90)
-    printf("Upper case.\n");
+  if ((strcmp(h, "excellent") == 0) && (age >= 25 && age <= 35) && (strcmp(l, "city") == 0))
+  {
+    if (s == 'M')
+    {
+      printf("Can be insured, Premium: Rs 4 per thousand, Max Policy = 200000.\n");
+    }
+    else if (s == 'F')
+    {
+      printf("Can be insured, Premium: Rs 3 per thousand, Max Policy = 100000.\n");
+    }
+  }
+  else if (strcmp(h, "poor") == 0 && strcmp(l, "village") == 0 && s == 'M')
+  {
+    printf("Can be insured, Premium: Rs 6 per thousand, Max Policy = 10000.\n");
+  }
   else
-    printf("Inavalid input.\n");
+    printf("Cannot be insured.\n");
 }
+
 int main()
 {
-  char ch;
-  printf("Enter a character.\n");
-  scanf("%c", &ch);
-  check(ch);
-
-  // Test code
-  //  char test[10] = {'a', 'J', '1', '*', 's', 'F', ')'};
-  //  for (int i = 0; i < 7; i++)
-  //  {
-  //    check(test[i]);
-  //  }
-
+  char health[10], sex, location[10];
+  int age;
+  printf("Enter the health condition, age, location, and sex.\n");
+  scanf("%s %d %s %c", health, &age, location, &sex);
+  insurance(health, sex, location, age);
   return 0;
 }
