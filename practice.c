@@ -192,29 +192,106 @@ the output should be displayed as 23402.*/
 /*Any year is input through the keyboard. Write a program to
 determine whether the year is a leap year or not.*/
 
-#include <stdio.h>
+// #include <stdio.h>
 
-void leap_year(int year)
+// void leap_year(int year)
+// {
+//   if (year % 4 == 0)
+//   {
+//     if (year % 100 == 0)
+//     {
+//       if (year % 400 == 0)
+//         printf("Leap year.\n");
+//       else
+//         printf("Not leap year.\n");
+//     }
+//     else
+//       printf("Leap year.\n");
+//   }
+//   else
+//     printf("Not leap year.\n");
+// }
+// int main()
+// {
+//   int year;
+//   scanf("%d", &year);
+//   leap_year(year);
+//   return 0;
+// }
+
+/*Given three points (x1, y1), (x2, y2) and (x3, y3), write a
+program to check if all the three points fall on one straight line.*/
+
+// #include <stdio.h>
+// void straight_line(int x1, int y1, int x2, int y2, int x3, int y3, int *m1, int *m2)
+// {
+//   *m1 = (y2 - y1) / (x2 - x1);
+//   *m2 = (y3 - y2) / (x3 - x2);
+// }
+
+// void test_straight_line(int x1, int y1, int x2, int y2, int x3, int y3, int expected_result)
+// {
+//   int m1, m2;
+//   straight_line(x1, y1, x2, y2, x3, y3, &m1, &m2);
+
+//   if ((m1 == m2) == expected_result)
+//     printf("Test Passed: ");
+//   else
+//     printf("Test Failed: ");
+
+//   printf("Points (%d, %d), (%d, %d), (%d, %d) - Expected: %s\n", x1, y1, x2, y2, x3, y3, expected_result ? "Straight line" : "Not a straight line");
+// }
+
+// int main()
+// {
+//   int x1, x2, x3, y1, y2, y3;
+//   float m1, m2;
+//   printf("Enter the co-ordinates.\n");
+//   scanf("%d%d%d%d%d%d", &x1, &y1, &x2, &y2, &x3, &y3);
+//   straight_line(x1, y1, x2, y2, x3, y3, &m1, &m2);
+//   if (m1 == m2)
+//     printf("Straight line.\n");
+//   else
+//     printf("Not a straight line.\n");
+
+//   // Test cases
+//   test_straight_line(1, 1, 2, 2, 3, 3, 1); // All points fall on a straight line
+//   test_straight_line(1, 1, 2, 2, 4, 4, 0); // Not all points fall on a straight line
+
+//   return 0;
+// }
+
+/*Any character is entered through the keyboard, write a
+program to determine whether the character entered is a
+capital letter, a small case letter, a digit or a special symbol.*/
+
+#include <stdio.h>
+void check(char ch)
 {
-  if (year % 4 == 0)
-  {
-    if (year % 100 == 0)
-    {
-      if (year % 400 == 0)
-        printf("Leap year.\n");
-      else
-        printf("Not leap year.\n");
-    }
-    else
-      printf("Leap year.\n");
-  }
+  if ((ch >= 123 && ch <= 127) || (ch >= 0 && ch <= 47) || (ch >= 58 && ch <= 64) || (ch >= 91 && ch <= 96))
+    printf("Special characters.\n");
+  else if (ch >= 48 && ch <= 57)
+    printf("Digits.\n");
+  else if (ch >= 97 && ch <= 122)
+    printf("Small case.\n");
+  else if (ch >= 65 && ch <= 90)
+    printf("Upper case.\n");
   else
-    printf("Not leap year.\n");
+    printf("Inavalid input.\n");
 }
 int main()
 {
-  int year;
-  scanf("%d", &year);
-  leap_year(year);
+  char ch;
+  printf("Enter a character.\n");
+  scanf("%c", &ch);
+  check(ch);
+
+  // Test code
+  //  char test[10] = {'a', 'J', '1', '*', 's', 'F', ')'};
+  //  for (int i = 0; i < 7; i++)
+  //  {
+  //    check(test[i]);
+  //  }
+
   return 0;
 }
