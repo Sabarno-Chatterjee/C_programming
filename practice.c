@@ -313,36 +313,66 @@ Write a program to output whether the person should be
 insured or not, his/her premium rate and maximum amount
 for which he/she can be insured.*/
 
-#include <stdio.h>
-#include <string.h>
+// #include <stdio.h>
+// #include <string.h>
 
-void insurance(char h[], char s, char l[], int age)
-{
-  if ((strcmp(h, "excellent") == 0) && (age >= 25 && age <= 35) && (strcmp(l, "city") == 0))
-  {
-    if (s == 'M')
-    {
-      printf("Can be insured, Premium: Rs 4 per thousand, Max Policy = 200000.\n");
-    }
-    else if (s == 'F')
-    {
-      printf("Can be insured, Premium: Rs 3 per thousand, Max Policy = 100000.\n");
-    }
-  }
-  else if (strcmp(h, "poor") == 0 && strcmp(l, "village") == 0 && s == 'M')
-  {
-    printf("Can be insured, Premium: Rs 6 per thousand, Max Policy = 10000.\n");
-  }
-  else
-    printf("Cannot be insured.\n");
-}
+// void insurance(char h[], char s, char l[], int age)
+// {
+//   if ((strcmp(h, "excellent") == 0) && (age >= 25 && age <= 35) && (strcmp(l, "city") == 0))
+//   {
+//     if (s == 'M')
+//     {
+//       printf("Can be insured, Premium: Rs 4 per thousand, Max Policy = 200000.\n");
+//     }
+//     else if (s == 'F')
+//     {
+//       printf("Can be insured, Premium: Rs 3 per thousand, Max Policy = 100000.\n");
+//     }
+//   }
+//   else if (strcmp(h, "poor") == 0 && strcmp(l, "village") == 0 && s == 'M')
+//   {
+//     printf("Can be insured, Premium: Rs 6 per thousand, Max Policy = 10000.\n");
+//   }
+//   else
+//     printf("Cannot be insured.\n");
+// }
 
-int main()
-{
-  char health[10], sex, location[10];
-  int age;
-  printf("Enter the health condition, age, location, and sex.\n");
-  scanf("%s %d %s %c", health, &age, location, &sex);
-  insurance(health, sex, location, age);
-  return 0;
-}
+// int main()
+// {
+//   char health[10], sex, location[10];
+//   int age;
+//   printf("Enter the health condition, age, location, and sex.\n");
+//   scanf("%s %d %s %c", health, &age, location, &sex);
+//   insurance(health, sex, location, age);
+//   return 0;
+// }
+
+/*factorial using recursion*/
+
+// #include <stdio.h>
+// int factorial(int num)
+// {
+//   if (num == 1)
+//   {
+//     return 1;
+//   }
+//   else
+//   {
+//     return num * factorial(num - 1);
+//   }
+// }
+// int main()
+// {
+//   int num;
+//   printf("Enter a number.\n");
+//   scanf("%d", &num);
+//   printf("The factorial of %d is %d.\n", num, factorial(num));
+//   // Test code
+//   // int numbers[4] = {5, 6, 3, 7};
+//   // for (int i = 0; i < 4; i++)
+//   // {
+//   //   int currentNum = numbers[i];
+//   //   printf("The factorial of %d is %d.\n", currentNum, factorial(currentNum));
+//   // }
+//   return 0;
+// }
