@@ -405,24 +405,81 @@ for which he/she can be insured.*/
 
 // Pyramid of stars
 
+// #include <stdio.h>
+// int main()
+// {
+//     int n;
+//     printf("Enter the number of rows.\n");
+//     scanf("%d", &n);
+
+//     for (int i = 1; i <= n; i++)
+//     {
+//         for (int j = 1; j <= (2 * n - 1); j++)
+//         {
+//             if (j >= n - (i - 1) && j <= n + (i - 1))
+//                 printf("*");
+//             else
+//                 printf(" ");
+//         }
+//         printf("\n");
+//     }
+
+//     return 0;
+// }
+
+// Pallindrome
+
+// #include <stdio.h>
+// int main()
+// {
+//     int num, r, q, reverse = 0, original_num;
+//     printf("Enter a number to check for pallindrome and obtain it's reverse.\n");
+//     scanf("%d", &num);
+//     original_num = num;
+//     while (num)
+//     {
+//         r = num % 10;
+//         num = num / 10;
+//         reverse = reverse * 10 + r;
+//     }
+//     printf("The reversed number is %d\n", reverse);
+//     if (reverse == original_num)
+//         printf("It is a pallindrome.\n");
+//     else
+//         printf("It is not a pallindrome.\n");
+// }
+
+// pattern: 2 1 4 3 6 5 8 7 10 9 (Indirect recursion)
 #include <stdio.h>
+
+void even();
+void odd();
+int n = 1;
+void odd()
+{
+    if (n <= 10)
+    {
+        printf("%d ", n + 1);
+        n++;
+        even();
+    }
+    return;
+}
+
+void even()
+{
+    if (n <= 10)
+    {
+        printf("%d ", n - 1);
+        n++;
+        odd();
+    }
+    return;
+}
+
 int main()
 {
-    int n;
-    printf("Enter the number of rows.\n");
-    scanf("%d", &n);
-
-    for (int i = 1; i <= n; i++)
-    {
-        for (int j = 1; j <= (2 * n - 1); j++)
-        {
-            if (j >= n - (i - 1) && j <= n + (i - 1))
-                printf("*");
-            else
-                printf(" ");
-        }
-        printf("\n");
-    }
-
+    odd();
+    printf("\n");
     return 0;
 }
