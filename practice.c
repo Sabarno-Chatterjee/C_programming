@@ -450,36 +450,52 @@ for which he/she can be insured.*/
 // }
 
 // pattern: 2 1 4 3 6 5 8 7 10 9 (Indirect recursion)
+// #include <stdio.h>
+
+// void even();
+// void odd();
+// int n = 1;
+// void odd()
+// {
+//     if (n <= 10)
+//     {
+//         printf("%d ", n + 1);
+//         n++;
+//         even();
+//     }
+//     return;
+// }
+
+// void even()
+// {
+//     if (n <= 10)
+//     {
+//         printf("%d ", n - 1);
+//         n++;
+//         odd();
+//     }
+//     return;
+// }
+
+// int main()
+// {
+//     odd();
+//     printf("\n");
+//     return 0;
+// }
+
+// factorial with ternary operator
+
 #include <stdio.h>
-
-void even();
-void odd();
-int n = 1;
-void odd()
+int factorial(int n)
 {
-    if (n <= 10)
-    {
-        printf("%d ", n + 1);
-        n++;
-        even();
-    }
-    return;
+    return (n == 1 || n == 0) ? 1 : n * factorial(n - 1);
 }
-
-void even()
-{
-    if (n <= 10)
-    {
-        printf("%d ", n - 1);
-        n++;
-        odd();
-    }
-    return;
-}
-
 int main()
 {
-    odd();
-    printf("\n");
+    int num;
+    printf("Enter a number.\n");
+    scanf("%d", &num);
+    printf("%d\n", factorial(num));
     return 0;
 }
