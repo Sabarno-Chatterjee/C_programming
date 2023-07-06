@@ -379,26 +379,50 @@ for which he/she can be insured.*/
 
 // fibonacci sq using recursion
 
-#include <stdio.h>
-int fibonacci(int n)
-{
-    if (n == 0)
-        return 0;
-    else if (n == 1 || n == 2)
-        return 1;
-    else
-        return fibonacci(n - 1) + fibonacci(n - 2);
-}
+// #include <stdio.h>
+// int fibonacci(int n)
+// {
+//     if (n == 0)
+//         return 0;
+//     else if (n == 1 || n == 2)
+//         return 1;
+//     else
+//         return fibonacci(n - 1) + fibonacci(n - 2);
+// }
 
+// int main()
+// {
+//     int num;
+//     printf("Enter how many terms of fibonacci sq you want to obtain.\n");
+//     scanf("%d", &num);
+//     for (int i = 0; i < num; i++)
+//     {
+//         printf("%d", fibonacci(i));
+//     }
+//     printf("\n");
+//     return 0;
+// }
+
+// Pyramid of stars
+
+#include <stdio.h>
 int main()
 {
-    int num;
-    printf("Enter how many terms of fibonacci sq you want to obtain.\n");
-    scanf("%d", &num);
-    for (int i = 0; i < num; i++)
+    int n;
+    printf("Enter the number of rows.\n");
+    scanf("%d", &n);
+
+    for (int i = 1; i <= n; i++)
     {
-        printf("%d", fibonacci(i));
+        for (int j = 1; j <= (2 * n - 1); j++)
+        {
+            if (j >= n - (i - 1) && j <= n + (i - 1))
+                printf("*");
+            else
+                printf(" ");
+        }
+        printf("\n");
     }
-    printf("\n");
+
     return 0;
 }
