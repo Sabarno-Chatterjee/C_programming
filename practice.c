@@ -515,23 +515,72 @@ for which he/she can be insured.*/
 
 // WAP a program to check whether any of the digits in a number appears more than once.
 
+// #include <stdio.h>
+// int main()
+// {
+//     int num, seen[10] = {0}, r;
+//     printf("Enter a number.\n");
+//     scanf("%d", &num);
+//     while (num > 0)
+//     {
+//         r = num % 10;
+//         if (seen[r] == 1)
+//             break;
+//         seen[r] = 1;
+//         num = num / 10;
+//     }
+//     if (num > 0)
+//         printf("Yes.\n");
+//     else
+//         printf("No.\n");
+//     return 0;
+// }
+
+/*WAP that reads a 5*5 array of integersand then printsthe row sum and the column sum:
+Enter row 1: 8 3 9 0 10
+Enter row 2: 3 5 17 1 1
+Enter row 3: 2 8 6 23 1
+Enter row 4: 15 7 3 2 9
+Enter row 5: 6 14 2 6 0
+
+Row total : 30 27 40 36 28
+Column total:34 37 37 32 21
+*/
+
 #include <stdio.h>
 int main()
 {
-    int num, seen[10] = {0}, r;
-    printf("Enter a number.\n");
-    scanf("%d", &num);
-    while (num > 0)
+    int arr[5][5] = {
+        {8, 3, 9, 0, 10},
+        {3, 5, 17, 1, 1},
+        {2, 8, 6, 23, 1},
+        {15, 7, 3, 2, 9},
+        {6, 14, 2, 6, 0},
+    };
+    int total_col[5], total_row[5];
+    for (int i = 0; i < 5; i++)
     {
-        r = num % 10;
-        if (seen[r] == 1)
-            break;
-        seen[r] = 1;
-        num = num / 10;
+        int row_sum = 0, col_sum = 0;
+        for (int j = 0; j < 5; j++)
+        {
+            col_sum += arr[j][i];
+            row_sum += arr[i][j];
+        }
+        total_col[i] = col_sum;
+        total_row[i] = row_sum;
     }
-    if (num > 0)
-        printf("Yes.\n");
-    else
-        printf("No.\n");
+
+    printf("Row total: ");
+    for (int i = 0; i < 5; i++)
+    {
+        printf("%d ", total_row[i]);
+    }
+    printf("\n");
+    printf("Column total: ");
+    for (int i = 0; i < 5; i++)
+    {
+        printf("%d ", total_col[i]);
+    }
+    printf("\n");
     return 0;
 }
