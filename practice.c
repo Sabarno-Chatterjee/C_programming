@@ -547,39 +547,80 @@ Row total : 30 27 40 36 28
 Column total:34 37 37 32 21
 */
 
+// #include <stdio.h>
+// int main()
+// {
+//     int arr[5][5] = {
+//         {8, 3, 9, 0, 10},
+//         {3, 5, 17, 1, 1},
+//         {2, 8, 6, 23, 1},
+//         {15, 7, 3, 2, 9},
+//         {6, 14, 2, 6, 0},
+//     };
+//     int total_col[5], total_row[5];
+//     for (int i = 0; i < 5; i++)
+//     {
+//         int row_sum = 0, col_sum = 0;
+//         for (int j = 0; j < 5; j++)
+//         {
+//             col_sum += arr[j][i];
+//             row_sum += arr[i][j];
+//         }
+//         total_col[i] = col_sum;
+//         total_row[i] = row_sum;
+//     }
+
+//     printf("Row total: ");
+//     for (int i = 0; i < 5; i++)
+//     {
+//         printf("%d ", total_row[i]);
+//     }
+//     printf("\n");
+//     printf("Column total: ");
+//     for (int i = 0; i < 5; i++)
+//     {
+//         printf("%d ", total_col[i]);
+//     }
+//     printf("\n");
+//     return 0;
+// }
+
+// Matrix multiplication
+
 #include <stdio.h>
 int main()
 {
-    int arr[5][5] = {
-        {8, 3, 9, 0, 10},
-        {3, 5, 17, 1, 1},
-        {2, 8, 6, 23, 1},
-        {15, 7, 3, 2, 9},
-        {6, 14, 2, 6, 0},
-    };
-    int total_col[5], total_row[5];
-    for (int i = 0; i < 5; i++)
+    int matrix1[3][3] = {
+        {1, 2, 3},
+        {1, 2, 1},
+        {3, 1, 2}};
+    int matrix2[3][3] = {
+        {1, 2, 3},
+        {1, 2, 1},
+        {3, 1, 2}};
+    int product[3][3];
+    int sum = 0;
+    for (int i = 0; i < 3; i++)
     {
-        int row_sum = 0, col_sum = 0;
-        for (int j = 0; j < 5; j++)
+        for (int j = 0; j < 3; j++)
         {
-            col_sum += arr[j][i];
-            row_sum += arr[i][j];
+
+            for (int k = 0; k < 3; k++)
+            {
+                sum += matrix1[i][k] * matrix2[k][j];
+            }
+            product[i][j] = sum;
+            sum = 0;
         }
-        total_col[i] = col_sum;
-        total_row[i] = row_sum;
     }
 
-    printf("Row total: ");
-    for (int i = 0; i < 5; i++)
+    for (int i = 0; i < 3; i++)
     {
-        printf("%d ", total_row[i]);
-    }
-    printf("\n");
-    printf("Column total: ");
-    for (int i = 0; i < 5; i++)
-    {
-        printf("%d ", total_col[i]);
+        for (int j = 0; j < 3; j++)
+        {
+            printf("%d ", product[i][j]);
+        }
+        printf("\n");
     }
     printf("\n");
     return 0;
