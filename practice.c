@@ -486,16 +486,52 @@ for which he/she can be insured.*/
 
 // factorial with ternary operator
 
+// #include <stdio.h>
+// int factorial(int n)
+// {
+//     return (n == 1 || n == 0) ? 1 : n * factorial(n - 1);
+// }
+// int main()
+// {
+//     int num;
+//     printf("Enter a number.\n");
+//     scanf("%d", &num);
+//     printf("%d\n", factorial(num));
+//     return 0;
+// }
+
+// WAP to print the following numbers in reverse order:34 56 54 32 67 89 90 32 21
+
+// #include <stdio.h>
+// int main()
+// {
+//     int arr[] = {34, 56, 54, 32, 67, 89, 90, 32, 21};
+//     int length = sizeof(arr) / sizeof(arr[0]);
+//     for (int i = length - 1; i >= 0; i--)
+//         printf("%d ", arr[i]);
+//     printf("\n");
+//     return 0;
+// }
+
+// WAP a program to check whether any of the digits in a number appears more than once.
+
 #include <stdio.h>
-int factorial(int n)
-{
-    return (n == 1 || n == 0) ? 1 : n * factorial(n - 1);
-}
 int main()
 {
-    int num;
+    int num, seen[10] = {0}, r;
     printf("Enter a number.\n");
     scanf("%d", &num);
-    printf("%d\n", factorial(num));
+    while (num > 0)
+    {
+        r = num % 10;
+        if (seen[r] == 1)
+            break;
+        seen[r] = 1;
+        num = num / 10;
+    }
+    if (num > 0)
+        printf("Yes.\n");
+    else
+        printf("No.\n");
     return 0;
 }
