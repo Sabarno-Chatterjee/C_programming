@@ -587,41 +587,82 @@ Column total:34 37 37 32 21
 
 // Matrix multiplication
 
+// #include <stdio.h>
+// int main()
+// {
+//     int matrix1[3][3] = {
+//         {1, 2, 3},
+//         {1, 2, 1},
+//         {3, 1, 2}};
+//     int matrix2[3][3] = {
+//         {1, 2, 3},
+//         {1, 2, 1},
+//         {3, 1, 2}};
+//     int product[3][3];
+//     int sum = 0;
+//     for (int i = 0; i < 3; i++)
+//     {
+//         for (int j = 0; j < 3; j++)
+//         {
+
+//             for (int k = 0; k < 3; k++)
+//             {
+//                 sum += matrix1[i][k] * matrix2[k][j];
+//             }
+//             product[i][j] = sum;
+//             sum = 0;
+//         }
+//     }
+
+//     for (int i = 0; i < 3; i++)
+//     {
+//         for (int j = 0; j < 3; j++)
+//         {
+//             printf("%d ", product[i][j]);
+//         }
+//         printf("\n");
+//     }
+//     printf("\n");
+//     return 0;
+// }
+
+// Program to find largest and smallest element in an array using pointers.
+
 #include <stdio.h>
+
+void minMax(int arr[], int n, int *min, int *max)
+{
+    *min = *max = arr[0];
+    for (int i = 1; i < n; i++)
+    {
+        if (arr[i] > *max)
+            *max = arr[i];
+        if (arr[i] < *min)
+            *min = arr[i];
+    }
+}
+
 int main()
 {
-    int matrix1[3][3] = {
-        {1, 2, 3},
-        {1, 2, 1},
-        {3, 1, 2}};
-    int matrix2[3][3] = {
-        {1, 2, 3},
-        {1, 2, 1},
-        {3, 1, 2}};
-    int product[3][3];
-    int sum = 0;
-    for (int i = 0; i < 3; i++)
-    {
-        for (int j = 0; j < 3; j++)
-        {
-
-            for (int k = 0; k < 3; k++)
-            {
-                sum += matrix1[i][k] * matrix2[k][j];
-            }
-            product[i][j] = sum;
-            sum = 0;
-        }
-    }
-
-    for (int i = 0; i < 3; i++)
-    {
-        for (int j = 0; j < 3; j++)
-        {
-            printf("%d ", product[i][j]);
-        }
-        printf("\n");
-    }
-    printf("\n");
+    int arr[] = {45, 34, 21, 67, 43, 89, 32, 8, 35, 5, 2, 78, 2, 46, 9, 35, 221, 678, 4};
+    int min, max, length = sizeof(arr) / sizeof(arr[0]);
+    minMax(arr, length, &min, &max);
+    printf("Max = %d, Min = %d\n", max, min);
     return 0;
 }
+// Program to find mid of an array.
+// Sum of array elements using pointers.
+
+// #include <stdio.h>
+// int sum(int arr[], int n)
+// {
+//     for (int i = 0; i < n; i++)
+//     {
+//     }
+// }
+// int main()
+// {
+//     int arr[] = {6, 4, 3, 9, 5};
+//     int n = sizeof(arr) / sizeof(arr[0]);
+//     int *sum = sum(arr, n);
+// }
