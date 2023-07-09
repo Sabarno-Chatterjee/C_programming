@@ -669,35 +669,39 @@ Column total:34 37 37 32 21
 
 // Sum of array elements using pointers.
 
-// #include <stdio.h>
-
-// int main()
-// {
-//     int arr[] = {6, 4, 3, 9, 5};
-//     int n = sizeof(arr) / sizeof(arr[0]);
-//     int sum = 0, *p;
-//     for (p = arr; p <= arr + 4; p++)
-//         sum += *p;
-//     printf("Sum : %d\n", sum);
-//     return 0;
-// }
+#include <stdio.h>
+void add(int b[], int *sum, int n)
+{
+    int *p;
+    for (p = b; p <= b + n - 1; p++)
+        *sum += *p;
+}
+int main()
+{
+    int arr[] = {6, 4, 3, 9, 5};
+    int n = sizeof(arr) / sizeof(arr[0]);
+    int sum = 0;
+    add(arr, &sum, n);
+    printf("Sum : %d\n", sum);
+    return 0;
+}
 
 // reverse a series of numbers using pointers.
 
-#include <stdio.h>
+// #include <stdio.h>
 
-#define N 5
+// #define N 5
 
-int main()
-{
-    int arr[N], *p;
+// int main()
+// {
+//     int arr[N], *p;
 
-    printf("Enter %d elements in the array: \n", N);
-    for (p = arr; p <= arr + N - 1; p++)
-        scanf("%d", p);
-    printf("Elements in reverse order: \n");
-    for (p = arr + N - 1; p >= arr; p--)
-        printf("%d ", *p);
-    printf("\n");
-    return 0;
-}
+//     printf("Enter %d elements in the array: \n", N);
+//     for (p = arr; p <= arr + N - 1; p++)
+//         scanf("%d", p);
+//     printf("Elements in reverse order: \n");
+//     for (p = arr + N - 1; p >= arr; p--)
+//         printf("%d ", *p);
+//     printf("\n");
+//     return 0;
+// }
