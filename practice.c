@@ -628,41 +628,57 @@ Column total:34 37 37 32 21
 
 // Program to find largest and smallest element in an array using pointers.
 
-#include <stdio.h>
-
-void minMax(int arr[], int n, int *min, int *max)
-{
-    *min = *max = arr[0];
-    for (int i = 1; i < n; i++)
-    {
-        if (arr[i] > *max)
-            *max = arr[i];
-        if (arr[i] < *min)
-            *min = arr[i];
-    }
-}
-
-int main()
-{
-    int arr[] = {45, 34, 21, 67, 43, 89, 32, 8, 35, 5, 2, 78, 2, 46, 9, 35, 221, 678, 4};
-    int min, max, length = sizeof(arr) / sizeof(arr[0]);
-    minMax(arr, length, &min, &max);
-    printf("Max = %d, Min = %d\n", max, min);
-    return 0;
-}
-// Program to find mid of an array.
-// Sum of array elements using pointers.
-
 // #include <stdio.h>
-// int sum(int arr[], int n)
+
+// void minMax(int arr[], int n, int *min, int *max)
 // {
-//     for (int i = 0; i < n; i++)
+//     *min = *max = arr[0];
+//     for (int i = 1; i < n; i++)
 //     {
+//         if (arr[i] > *max)
+//             *max = arr[i];
+//         if (arr[i] < *min)
+//             *min = arr[i];
 //     }
+// }
+
+// int main()
+// {
+//     int arr[] = {45, 34, 21, 67, 43, 89, 32, 8, 35, 5, 2, 78, 2, 46, 9, 35, 221, 678, 4};
+//     int min, max, length = sizeof(arr) / sizeof(arr[0]);
+//     minMax(arr, length, &min, &max);
+//     printf("Max = %d, Min = %d\n", max, min);
+//     return 0;
+// }
+
+// Program to find mid of an array.
+// #include <Stdio.h>
+
+// int *findMid(int arr[], int n)
+// {
+//     return &arr[n / 2];
 // }
 // int main()
 // {
-//     int arr[] = {6, 4, 3, 9, 5};
-//     int n = sizeof(arr) / sizeof(arr[0]);
-//     int *sum = sum(arr, n);
+//     int arr[] = {3, 6, 9, 4, 5};
+//     int length = sizeof(arr) / sizeof(arr[0]);
+//     int *mid = findMid(arr, length);
+//     printf("The middle value is: %d\n", *mid);
+//     return 0;
 // }
+
+// Sum of array elements using pointers.
+
+#include <stdio.h>
+
+int main()
+{
+    int arr[] = {6, 4, 3, 9, 5};
+    int n = sizeof(arr) / sizeof(arr[0]);
+    printf("%d\n", n);
+    int sum = 0, *p;
+    for (p = &arr[0]; p <= &arr[n - 1]; p++)
+        sum += *p;
+    printf("Sum : %d\n", sum);
+    return 0;
+}
