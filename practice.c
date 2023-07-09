@@ -669,22 +669,22 @@ Column total:34 37 37 32 21
 
 // Sum of array elements using pointers.
 
-#include <stdio.h>
-void add(int b[], int *sum, int n)
-{
-    int *p;
-    for (p = b; p <= b + n - 1; p++)
-        *sum += *p;
-}
-int main()
-{
-    int arr[] = {6, 4, 3, 9, 5};
-    int n = sizeof(arr) / sizeof(arr[0]);
-    int sum = 0;
-    add(arr, &sum, n);
-    printf("Sum : %d\n", sum);
-    return 0;
-}
+// #include <stdio.h>
+// void add(int b[], int *sum, int n)
+// {
+//     int *p;
+//     for (p = b; p <= b + n - 1; p++)
+//         *sum += *p;
+// }
+// int main()
+// {
+//     int arr[] = {6, 4, 3, 9, 5};
+//     int n = sizeof(arr) / sizeof(arr[0]);
+//     int sum = 0;
+//     add(arr, &sum, n);
+//     printf("Sum : %d\n", sum);
+//     return 0;
+// }
 
 // reverse a series of numbers using pointers.
 
@@ -705,3 +705,24 @@ int main()
 //     printf("\n");
 //     return 0;
 // }
+
+// Using pointers to print 2D arrays
+
+#include <stdio.h>
+
+#define R 2
+#define C 2
+
+int main()
+{
+    int arr[R][C] = {
+        {56, 78},
+        {34, 69}};
+    int *p;
+
+    for (p = &arr[0][0]; p <= &arr[R - 1][C - 1]; p++)
+        printf("%d ", *p);
+
+    printf("\n");
+    return 0;
+}
