@@ -5,7 +5,7 @@
 // Function to check if a number is a palindrome
 int palindrome(int num) {
     int reverse = 0, original_num = num;
-    while (num != 0) {
+    while (num) {
         reverse = reverse * 10 + num % 10; // Reversing the number digit by digit
         num /= 10;
     }
