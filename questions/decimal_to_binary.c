@@ -3,15 +3,16 @@
 
 #include <stdio.h>
 
+int i;
 // Function to print the binary representation of an array
-void print_binary(int i, int binary[]) {
+void print_binary(int binary[]) {
     for (int j = i - 1; j >= 0; j--)
         printf("%d", binary[j]);
 }
 
 // Function to convert a decimal number to its binary equivalent
 void decimalToBinary(int num) {
-    int i = 0, binary[32]; // Assuming 32-bit integers, you can adjust this size as needed
+    int binary[32]; // Assuming 32-bit integers, you can adjust this size as needed
 
     // Handle the case when the number is 0 separately
     if (num == 0) {
@@ -28,7 +29,7 @@ void decimalToBinary(int num) {
 
     // Print the binary representation
     printf("Binary: ");
-    print_binary(i, binary);
+    print_binary(binary);
     printf("\n");
 }
 
