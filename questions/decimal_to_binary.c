@@ -1,37 +1,35 @@
 /*Write a C program to convert a decimal number to its binary equivalent.*/
 
 
-#include<stdio.h>
-#include<stdlib.h> // For dynamic memory allocation
+#include <stdio.h>
 
 // Function to print the binary representation of an array
-void print_binary(int arr[], int length) {
-    for (int i = length - 1; i >= 0; i--)
-        printf("%d", arr[i]);
+void print_binary(int i, int binary[]) {
+    for (int j = i - 1; j >= 0; j--)
+        printf("%d", binary[j]);
 }
 
 // Function to convert a decimal number to its binary equivalent
-void binary(int num) {
-    // Dynamically allocate memory for the binary_num array
-    int* binary_num = (int*)malloc(sizeof(int) * 32); // Assuming 32-bit integers
+void decimalToBinary(int num) {
+    int i = 0, binary[32]; // Assuming 32-bit integers, you can adjust this size as needed
 
-    if (binary_num == NULL) {
-        printf("Memory allocation failed.\n");
+    // Handle the case when the number is 0 separately
+    if (num == 0) {
+        printf("Binary: 0\n");
         return;
     }
 
-    int i = 0;
+    // Convert the decimal number to binary
     while (num) {
-        binary_num[i] = num % 2;
+        binary[i] = num % 2;
         num /= 2;
         i++;
     }
 
-    int length_of_array = i; // Number of binary digits
-    print_binary(binary_num, length_of_array);
-
-    // Free the dynamically allocated memory
-    free(binary_num);
+    // Print the binary representation
+    printf("Binary: ");
+    print_binary(i, binary);
+    printf("\n");
 }
 
 int main() {
@@ -39,7 +37,9 @@ int main() {
     printf("Enter a decimal number: ");
     scanf("%d", &decimal);
 
-    binary(decimal);
+    // Call the decimalToBinary function to convert and print the binary representation
+    decimalToBinary(decimal);
 
     return 0;
 }
+
