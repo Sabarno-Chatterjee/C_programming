@@ -105,3 +105,57 @@ Female  >= 10               Post-Graduate   12000
         >= 10               Graduate        9000
         < 10                Post-Graduate   10000
         < 10                Graduate        6000
+
+
+#include<stdio.h>
+#include<string.h>
+
+int main()
+{
+    int years;
+    int qualification;
+    char gender;
+    printf("Enter the years of service.\n");
+    scanf("%d", &years);
+    printf("Enter your qualification. Enter 0 for graduate and 1 for post graduate\n");
+    scanf("%d", &qualification);
+    getchar();
+    printf("Enter your gender(m/f).\n");
+    scanf("%c", &gender);
+    
+    if(gender == 'm' || gender == 'M'){
+        if(qualification==0){
+            if(years<10 && years>0){
+                printf("Salary: 7000");
+            } else{
+                printf("Salary: 10000");
+            }
+        } else{ if(years<10 && years>0){
+                printf("Salary: 10000");
+            } else{
+                printf("Salary: 15000");
+            }
+
+        }
+    } else{
+        if(qualification==0){
+            if(years<10 && years>0){
+                printf("Salary: 6000");
+            } else{
+                printf("Salary: 9000");
+            }
+        } else{ if(years<10 && years>0){
+                printf("Salary: 10000");
+            } else{
+                printf("Salary: 12000");
+            }
+
+        }
+
+    }
+   
+    printf("\n");
+    return 0;
+}
+
+
