@@ -1,0 +1,107 @@
+Q. If a four-digit number is input through the keyboard, write a
+program to obtain the sum of the first and last digit of this
+number.
+
+#include<stdio.h>
+
+int main()
+{
+    int num;
+    printf("Enter a 4 digit num.\n");
+    scanf("%d", &num);
+    printf("Sum of 1st and 4th digit : %d\n", num/1000+num%10);
+
+    return 0;
+}
+
+
+Q. Paper of size A0 has dimensions 1189mm X 841mm. Each subsequent size A(n) is defined as A(n-1) cut in half parallel to its shorter sides. Write a program to calculate and print paper sizes A0, A1, A2, ... A8.
+
+
+#include<stdio.h>
+
+int main()
+{
+    int a_height= 1189, a_width=841, temp;
+    for(int i=0; i<9; i++){
+        printf("Size of A%d: %d x %d\n", i, a_height, a_width);
+        temp = a_height;
+        a_height = a_width;
+        a_width = temp/2;
+    }
+
+    return 0;
+}
+
+
+Q. In a town, the percentage of men is 52. The percentage of
+total literacy is 48. If total percentage of literate men is 35 of
+the total population, write a program to find the total number of illiterate men and women if the population of the town is
+80,000.
+
+
+#include<stdio.h>
+
+int main()
+{
+    float percentage_of_men = 0.52, total_literacy = 0.48, literate_men = 0.35;
+    int population = 80000;
+
+    int total_literate_men = 80000*literate_men;
+    int total_literate_women = population*total_literacy-total_literate_men;
+    int illiterate_men = population*percentage_of_men-total_literate_men;
+    int illiterate_women = population*0.48-total_literate_women;
+    printf("Total illiterate men: %d\n", illiterate_men);
+    printf("Total illiterate women: %d\n", illiterate_women);
+    printf("Total illiterate population: %d\n", population*0.52);
+
+    return 0;
+}
+
+
+Q.If a five-digit number is input through the keyboard, write a
+program to print a new number by adding one to each of its
+digits. For example if the number that is input is 12391 then
+the output should be displayed as 23402.
+
+#include<stdio.h>
+
+int main()
+{
+    int num, new_num=0;
+    printf("Enter a 5 digit num.\n");
+    scanf("%d", &num);
+    for(int i=0;i<5; i++){
+        if(num%10==9){
+            new_num= new_num*10;
+            num/=10;
+        }  
+        else{
+            new_num = new_num*10+num%10+1;
+            printf("%d\n", new_num);
+            num/=10;
+            // printf("%d\n", num);
+        }
+        
+    }
+    for(int i=0; i<5;i++){
+        printf("%d", new_num%10);
+        new_num/=10;
+    }
+    printf("\n");
+    return 0;
+}
+
+
+Q. Write a program to calculate the salary as per the
+following table:
+
+Gender Years of Service     Qualifications  Salary
+Male    >= 10               Post-Graduate   15000
+        >= 10               Graduate        10000
+        < 10                Post-Graduate   10000
+        < 10                Graduate        7000
+Female  >= 10               Post-Graduate   12000
+        >= 10               Graduate        9000
+        < 10                Post-Graduate   10000
+        < 10                Graduate        6000
