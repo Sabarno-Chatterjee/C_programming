@@ -159,3 +159,21 @@ int main()
 }
 
 
+Q. Sum of n natural numbers using recursion.
+
+
+#include<stdio.h>
+
+int sum(int n){
+    return (n==0) ? 0 : n +sum(n-1);
+}
+
+int main(){
+    int num;
+    printf("Enter a number.\n");
+    scanf("%d", &num);
+    
+    printf("Sum of first %d natural numbers : %d\n",num,sum(num));
+    
+    return 0;
+}
