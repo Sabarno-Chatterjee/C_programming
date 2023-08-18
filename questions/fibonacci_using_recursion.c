@@ -13,4 +13,4 @@ int main() {
         printf("%d ", fibonacci(i)); // Print the Fibonacci number for the current index
     }
     return 0;
-}
+} 
