@@ -96,31 +96,54 @@
 
 //Can you check whether a number is prime or not?
 
+// #include<stdio.h>
+
+// void check_prime(int num){
+//     int flag=1;
+//     if(num==1)
+//         printf("One is neither a prime nor a composite.\n");
+//     else{
+//         for(int i=2; i<num; i++){
+//             if(num%i==0 && num!=2){
+//                 flag = 0;
+//                 printf("Not a prime.\n");
+//                 break;
+//             }
+        
+//         }
+//     if(flag)
+//             printf("Prime.\n");
+//     }
+// }
+
+// int main(){
+//     int num;
+//     printf("Enter a num.\n");
+//     scanf("%d", &num);
+//     check_prime(num);
+
+//     return 0;
+// }
+
+//Write a program to find the reverse of a number.
+
 #include<stdio.h>
 
-void check_prime(int num){
-    int flag=1;
-    if(num==1)
-        printf("One is neither a prime nor a composite.\n");
-    else{
-        for(int i=2; i<num; i++){
-            if(num%i==0 && num!=2){
-                flag = 0;
-                printf("Not a prime.\n");
-                break;
-            }
-        
-        }
-    if(flag)
-            printf("Prime.\n");
+
+void reverse(int num){
+    int reverse=0;
+    while(num){
+        reverse = reverse*10 + num%10;
+        num = num/10;
     }
+    printf("%d\n", reverse);
 }
 
 int main(){
     int num;
     printf("Enter a num.\n");
     scanf("%d", &num);
-    check_prime(num);
+    reverse(num);
 
     return 0;
 }
