@@ -78,18 +78,49 @@
 
 //using pointers
 
+// #include<stdio.h>
+
+// void swap(int *a,int *b){
+//     int temp =0;
+//     temp =*a;
+//     *a=*b;
+//     *b=temp;
+//     printf("a: %d, b: %d\n", *a, *b);
+// }
+
+// int main(){
+//     int a=56, b=78;
+//     swap(&a, &b);
+//     return 0;
+// }
+
+//Can you check whether a number is prime or not?
+
 #include<stdio.h>
 
-void swap(int *a,int *b){
-    int temp =0;
-    temp =*a;
-    *a=*b;
-    *b=temp;
-    printf("a: %d, b: %d\n", *a, *b);
+void check_prime(int num){
+    int flag=1;
+    if(num==1)
+        printf("One is neither a prime nor a composite.\n");
+    else{
+        for(int i=2; i<num; i++){
+            if(num%i==0 && num!=2){
+                flag = 0;
+                printf("Not a prime.\n");
+                break;
+            }
+        
+        }
+    if(flag)
+            printf("Prime.\n");
+    }
 }
 
 int main(){
-    int a=56, b=78;
-    swap(&a, &b);
+    int num;
+    printf("Enter a num.\n");
+    scanf("%d", &num);
+    check_prime(num);
+
     return 0;
 }
