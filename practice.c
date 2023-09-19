@@ -28,24 +28,68 @@
 
 //Can you find out the sum of the digits of a number?
 
+// #include<stdio.h>
+
+// int sum_of_digits(int num){
+//     int sum=0;
+//     while(num){
+//         sum += num%10;
+//         num /= 10;
+//     }
+
+//     return sum;
+// }
+
+// int main(){
+//     int num;
+//     printf("Enter a number.\n");
+//     scanf("%d", &num);
+//     printf("%d\n",sum_of_digits(num));
+
+
+//     return 0;
+// }
+
+//Try to swap two numbers with a third variable.
+
+// #include<stdio.h>
+// int main(){
+//     int a=7,b=8,temp=0;
+//     temp=a;
+//     a=b;
+//     b=temp;
+//     printf("a: %d, b= %d\n", a, b);
+//     return 0;
+// }
+
+//Can you now swap two numbers without a third variable?
+
+// #include<stdio.h>
+
+// int main(){
+//     int a=71, b=89;
+//     a= a+b;
+//     b = a-b;
+//     a=a-b;
+
+//     printf("a: %d, b= %d\n", a, b);
+//     return 0;
+// }
+
+//using pointers
+
 #include<stdio.h>
 
-int sum_of_digits(int num){
-    int sum=0;
-    while(num){
-        sum += num%10;
-        num /= 10;
-    }
-
-    return sum;
+void swap(int *a,int *b){
+    int temp =0;
+    temp =*a;
+    *a=*b;
+    *b=temp;
+    printf("a: %d, b: %d\n", *a, *b);
 }
 
 int main(){
-    int num;
-    printf("Enter a number.\n");
-    scanf("%d", &num);
-    printf("%d\n",sum_of_digits(num));
-
-
+    int a=56, b=78;
+    swap(&a, &b);
     return 0;
 }
