@@ -150,26 +150,44 @@
 
 // Now when you know to reverse a number, can you try to check whether a number is a palindrome or not?
 
+// #include<stdio.h>
+
+
+// void reverse(int num){
+//     int reverse=0, original_num=num;
+//     while(num){
+//         reverse = reverse*10 + num%10;
+//         num = num/10;
+//     }
+//     if(original_num==reverse)
+//         printf("It's a pallindrome.\n");
+//     else
+//         printf("It's not a pallindrome.\n");
+// }
+
+// int main(){
+//     int num;
+//     printf("Enter a num.\n");
+//     scanf("%d", &num);
+//     reverse(num);
+
+//     return 0;
+// }
+
+
+//Find the factorial of a number.
+
 #include<stdio.h>
 
-
-void reverse(int num){
-    int reverse=0, original_num=num;
-    while(num){
-        reverse = reverse*10 + num%10;
-        num = num/10;
-    }
-    if(original_num==reverse)
-        printf("It's a pallindrome.\n");
-    else
-        printf("It's not a pallindrome.\n");
+int factorial(int num){
+    return (num==0 || num==1) ? 1 : num*factorial(num-1);
 }
 
 int main(){
     int num;
-    printf("Enter a num.\n");
+    printf("Enter a number.\n");
     scanf("%d", &num);
-    reverse(num);
+    printf("%d\n", factorial(num));
 
     return 0;
 }
