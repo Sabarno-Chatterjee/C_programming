@@ -177,17 +177,42 @@
 
 //Find the factorial of a number.
 
+// #include<stdio.h>
+
+// int factorial(int num){
+//     return (num==0 || num==1) ? 1 : num*factorial(num-1);
+// }
+
+// int main(){
+//     int num;
+//     printf("Enter a number.\n");
+//     scanf("%d", &num);
+//     printf("%d\n", factorial(num));
+
+//     return 0;
+// }
+
+// Do you know about Fibonacci Series? The series following 1,1,2,3,5,8…, can you try to print the series upto n elements?
+
 #include<stdio.h>
 
-int factorial(int num){
-    return (num==0 || num==1) ? 1 : num*factorial(num-1);
+int fib(int n){
+    if(n==0)
+        return 0;
+    else if (n==1)
+        return 1;
+    else    
+        return fib(n-1)+ fib(n-2);      
 }
 
 int main(){
-    int num;
-    printf("Enter a number.\n");
-    scanf("%d", &num);
-    printf("%d\n", factorial(num));
+    int n;
+    printf("Enter n.\n");
+    scanf("%d", &n);
+    for(int i =0; i<n; i++)
+        printf("%d", fib(i));
+    
+    printf("\n");
 
     return 0;
 }
