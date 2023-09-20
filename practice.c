@@ -194,20 +194,22 @@
 
 // Do you know about Fibonacci Series? The series following 1,1,2,3,5,8…, can you try to print the series upto n elements?
 
-#include<stdio.h>
+// #include<stdio.h>
 
-int fib(int n){
-    return (n==0 || n==1) ? n : fib(n-1)+ fib(n-2);          
-}
+// int fib(int n){
+//     return (n==0 || n==1) ? n : fib(n-1)+ fib(n-2);          
+// }
 
-int main(){
-    int n;
-    printf("Enter n.\n");
-    scanf("%d", &n);
-    for(int i =0; i<n; i++)
-        printf("%d", fib(i));
+// int main(){
+//     int n;
+//     printf("Enter n.\n");
+//     scanf("%d", &n);
+//     for(int i =0; i<n; i++)
+//         printf("%d", fib(i));
     
-    printf("\n");
+//     printf("\n");
 
-    return 0;
-}
+//     return 0;
+// }
+
+
