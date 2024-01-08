@@ -26,7 +26,24 @@ void create_sparse(struct sparse_matrix *S){
         scanf("%d%d%d",&S->element[i].i,&S->element[i].j,&S->element[i].x);
 }
 
+void display(struct sparse_matrix *S){
+    printf("\n");
+    int i,j,k;
+    i=j=k=0;
+    for(i=0;i<S->row;i++){
+        for(j=0;j<S->column;j++){
+            if(i==S->element[k].i && j==S->element[k].j)
+                printf("%d ",S->element[k++].x);
+            else
+                printf("0 ");
+        }
+        printf("\n");
+    }
+}
+
 int main(){
-    
+    struct sparse_matrix S;
+    create_sparse(&S);
+    display(&S);
     return 0;
 }
