@@ -1,5 +1,3 @@
-//addition of polynomials
-
 #include<stdio.h>
 #include<stdlib.h>
 
@@ -20,6 +18,11 @@ void create_polynomial(struct build_polynomial *P){
     printf("Enter the coefficent and exponent");
     for(int i=0;i<P->num_of_terms;i++)
         scanf("%d%d",&P->terms[i].coefficient,&P->terms[i].exponent);
+}
+
+void display_polynomial(struct build_polynomial *P){
+    for(int i=0;i<P->num_of_terms;i++)
+        printf("%dx%d+",P->terms[i].coefficient,P->terms[i].exponent);
 }
 
 int main(){
