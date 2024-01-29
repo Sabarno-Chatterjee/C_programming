@@ -7,34 +7,72 @@ struct Node{
 }*first=NULL;
 
 
-void create(int A[],int n){
-    int i;
+void create(int arr[],int n){
     struct Node *temp,*last;
-    first=(struct Node *)malloc(sizeof(struct Node));
-    first->data=A[0];
+    first=(struct Node*)malloc(sizeof(struct Node));
+    first->data=arr[0];
     first->next=NULL;
     last=first;
     
-    for(i=1;i<=n;i++){
+    for(int i=1;i<n;i++){
         temp=(struct Node*)malloc(sizeof(struct Node));
-        temp->data=A[i];
+        temp->data=arr[i];
         temp->next=NULL;
         last->next=temp;
         last=temp;
     }
 }
 
-void Display(struct Node *ptr){
-    while(ptr!=NULL){
-        printf("%d ",ptr->data);
-        ptr=ptr->next;
+void display(struct Node *p){
+    while(p!=NULL){
+        printf("%d ",p->data);
+        p=p->next;
     }
-    printf("\n");
+}
+
+void RDisplay(struct Node *p){
+    if(p!=NULL){
+        printf("%d ",p->data);
+        RDisplay(p->next);
+    }
+}
+
+int Count(struct Node *p){
+    int c=0;
+    while(p!=NULL){
+        c++;
+        p=p->next;
+    }
+    return c;
+}
+
+int RCount(struct Node *p){
+    if(p==NULL)
+        return 0;
+    return 1+RCount(p->next);
+}
+
+int Sum(struct Node *p){
+    int s=0;
+    while(p!=NULL){
+        s+=p->data;
+        p=p->next;
+    }
+    return s;
+}
+
+int RSum(struct Node *p){
+    if(p==NULL)
+        return 0;
+    return p->data + Sum(p->next);
 }
 
 int main(){
-    int A[]={34,23,12,35,24};  
-    create(A,5);
-    Display(first);
+    int arr[]={5,6,4,7,9};
+    create(arr,5);
+    display(first);
+    printf("\n");
+    printf("%d\n",RCount(first));
+    
     return 0;
 }
