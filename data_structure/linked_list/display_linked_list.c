@@ -67,12 +67,58 @@ int RSum(struct Node *p){
     return p->data + Sum(p->next);
 }
 
+int Max(struct Node *p){
+    int max=p->data;
+    p=p->next;
+    while(p!=NULL){
+        if(p->data>max)
+            max=p->data;
+        p=p->next;
+    }
+    return max;
+}
+
+
+
+int Min(struct Node *p){
+    int min=p->data;
+    p=p->next;
+    while(p!=NULL){
+        if(p->data<min)
+            min=p->data;
+        p=p->next;
+    }
+    return min;
+}
+
+struct Node* Search(struct Node *p,int key){
+    while(p!=NULL){
+        if(p->data==key)
+            return p;
+        p=p->next;
+    }
+    return NULL;
+}
+
+
 int main(){
-    int arr[]={5,6,4,7,9};
+    struct Node *temp;
+    int arr[]={5,6,44,3,9};
     create(arr,5);
     display(first);
     printf("\n");
-    printf("%d\n",RCount(first));
+    printf("%d\n",Min(first));
+    
+    
+    Linear search
+    temp=Search(first,44);
+    if(temp)
+        printf("Key is found %d\n",temp->data);
+    else
+        printf("Key not found.\n");
+    
+    
+    
     
     return 0;
 }
