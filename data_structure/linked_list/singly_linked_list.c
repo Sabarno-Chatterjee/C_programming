@@ -7,22 +7,6 @@ struct Node{
     struct Node *next;
 }*first=NULL;
 
-void create(int arr[],int n){
-    struct Node *temp,*last;
-    first=(struct Node*)malloc(sizeof(struct Node*));
-    first->data=arr[0];
-    first->next=NULL;
-    last=first;
-    
-    for(int i=1;i<n;++i){
-        temp=(struct Node*)malloc(sizeof(struct Node*));
-        temp->data=arr[i];
-        temp->next=NULL;
-        last->next=temp;
-        last=temp;
-    }
-}
-
 int Count(struct Node *p){
     int c=0;
     while(p!=NULL){
@@ -55,7 +39,6 @@ void Insert(struct Node *p,int index,int info){
 }
 
 
-
 void display(struct Node *p){
     while(p!=NULL){
         printf("%d ",p->data);
@@ -64,11 +47,14 @@ void display(struct Node *p){
 }
 
 int main(){ 
-    int arr[]={1,2,3,4,5,6};
-    int n=sizeof(arr)/sizeof(arr[0]);
-    create(arr,n);
-    Insert(first,5,9);
-    Insert(first,0,19);
+    // int arr[]={1,2,3,4,5,6,7,8,9};
+    // int n=sizeof(arr)/sizeof(arr[0]);
+    // for(int i=0;i<n;i++)
+    //     Insert(first,i,arr[i]);
+    Insert(first,0,5);
+    Insert(first,1,9);
+    Insert(first,0,4);
+    
     display(first);
     
     return 0;
