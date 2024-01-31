@@ -5,7 +5,7 @@
 struct Node{
     int data;
     struct Node *next;
-}*first=NULL;
+}*first=NULL,*last=NULL;
 
 int Count(struct Node *p){
     int c=0;
@@ -23,7 +23,7 @@ void Insert(struct Node *p,int index,int info){
         return;
     
     temp=(struct Node*)malloc(sizeof(struct Node*));
-        temp->data=info;
+    temp->data=info;
         
     if(index==0){
         temp->next=p;
@@ -36,8 +36,37 @@ void Insert(struct Node *p,int index,int info){
         temp->next=p->next;
         p->next=temp;
     }
+    last=(struct Node*)malloc(sizeof(struct Node*));
+    last=p;
 }
 
+
+int Delete(struct Node *p,int index){
+    struct Node *q=NULL;
+    int x=-1;
+    
+    if(index<1 || index>Count(p))
+        return -1;
+    if(index==1){
+        p=first;
+        x=first->data;
+        first=first->next;
+        free(p);
+    }
+    else{
+        
+        for(int i=0;i<index-1;i++){
+            q=p;
+            p=p->next;
+        }
+        
+        x=p->data;
+        q->next=p->next;
+        
+        free(p);
+    }
+    return x;
+}
 
 void display(struct Node *p){
     while(p!=NULL){
@@ -54,7 +83,11 @@ int main(){
     Insert(first,0,5);
     Insert(first,1,9);
     Insert(first,0,4);
+    Insert(first,3,45);
+    // printf("%d\n",Delete(first,1));
+    // printf("%d\n",Delete(first,1));
     
+    printf("%d\n",Delete(first,2));
     display(first);
     
     return 0;
